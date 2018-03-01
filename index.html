@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <<link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -30,7 +30,24 @@
           </header>
           <main>
             <div class="container">
-              <div id="board">
+              <div id="info">
+                <div id="player-select">
+                  <h3>How Many Players?</h3>
+                  <button class="player-select-btn" id="1-player">1</button>
+                  <button class="player-select-btn" id="2-player">2</button>
+                </div>
+                <div id="name-input" class="hidden">
+                  <input type="text" placeholder="Player 1 Name">
+                  <input type="text" placeholder="Player 2 Name" class="hidden" id="player-2-input">
+                  <button id="name-input-submit-btn">Enter</button>
+                </div>
+                <div id="difficulty-select" class="hidden">
+                  <h3>Select Difficulty:</h3>
+                  <button class="difficulty-btn" id="normal">Normal</button>
+                  <button class="difficulty-btn" id="hard">Hard</button>
+                </div>
+              </div>
+              <div id="board" class="hidden">
                 <div class="tile" id="0"></div>
                 <div class="tile" id="1"></div>
                 <div class="tile" id="2"></div>
