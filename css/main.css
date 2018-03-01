@@ -132,6 +132,60 @@ header h1 {
   letter-spacing: 10px;
 }
 
+#instructions {
+  text-align: center;
+}
+
+#info {
+  font-size: 1.4em;
+}
+
+#info h3 {
+  text-shadow: 1px 1px 3px #222;
+}
+
+#player-select,
+#name-input,
+#difficulty-select {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 30px;
+  border-radius: 5px;
+  background: #5E5666;
+  box-shadow: 1px 1px 3px #0B0313;
+}
+
+#player-select button,
+#difficulty-select button,
+#name-input-submit-btn {
+  align-self: center;
+  background: #C7AADD;
+  color: #241F29;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  padding: 5px 15px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border-bottom: 3px solid #1C0534;
+  border-left: 1px solid #9B61B1
+}
+
+button:focus {
+  outline: none;
+}
+
+#player-select button:active,
+#difficulty-select button:active,
+#name-input-submit-btn:active {
+	transform: translateY(2px);
+  box-shadow: 1px 1px 3px #222;
+}
+
+#name-input input {
+  margin: 10px;
+}
+
 main {
   flex: 2;
   display: flex;
