@@ -74,3 +74,6 @@ const toggle = (() => {
 
   return { visibility };
 })();
+window.addEventListener("load", function() {
+  document.addEventListener("click", handlers.clickHandler, false );
+});
