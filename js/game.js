@@ -8,23 +8,15 @@ const game = (() => {
   let difficulty = 0;
   let players = [];
   let turn = 0;
-  const setNumberOfPlayers = (id) => {
-      isTwoPlayers = true;
-  };
 
-  const setDifficulty = (id) => {
-    // 0 = normal, 1 = hard
-    if (id === 'hard') {
-      difficulty = 1;
-    }
-  };
-
-  const reset = () => {
+  const checkForWin = () => {
     // TODO
-    isTwoPlayers = false;
-    difficulty = 0;
-    // TODO toggle visibility
   };
+
+  const createPlayer = (name, index) => {
+    let p = player(name, index);
+    players.push(p);
+  }
 
   const init = (inputs) => {
     // set up players
@@ -40,20 +32,33 @@ const game = (() => {
     }
   };
 
+  const render = (tileClicked) => {
+    board[tileClicked] = players[turn].playerMark;
+    updateTurn();
+  };
+
+  const reset = () => {
+    // TODO
+    isTwoPlayers = false;
+    difficulty = 0;
+    // TODO toggle visibility
+  };
+
+  const setDifficulty = (id) => {
+    // 0 = normal, 1 = hard
+    if (id === 'hard') {
+      difficulty = 1;
+    }
+  };
+
+  const setNumberOfPlayers = (id) => {
+      isTwoPlayers = true;
+  };
+
   const start = () => {
     toggle.visibility("info");
     toggle.visibility("board");
     render();
-  };
-
-  const createPlayer = (name, index) => {
-    let p = player(name, index);
-    players.push(p);
-  }
-
-  const render = (tileClicked) => {
-    board[tileClicked] = players[turn].playerMark;
-    updateTurn();
   };
 
   const updateTurn = () => {
@@ -62,10 +67,6 @@ const game = (() => {
     } else {
       turn = 0;
     }
-  };
-
-  const checkForWin = () => {
-    // TODO
   };
 
   const debug = () => {
