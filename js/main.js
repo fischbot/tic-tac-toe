@@ -155,13 +155,6 @@ const toggle = (() => {
   return { visibility };
 })();
 
-const elements = (() => {
-  // const btns = document.querySelectorAll("button");
-  // const tiles = document.querySelectorAll('.tile');
-  const inputs = document.querySelectorAll("input");
-  return { inputs };
-})();
-
 window.addEventListener("load", function() {
   document.addEventListener("click", handlers.clickHandler, false );
 });
