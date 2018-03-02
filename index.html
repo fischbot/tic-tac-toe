@@ -67,7 +67,17 @@
           </footer>
         </div><!-- /#page -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="js/elements.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/vendor/LAB.min.js"></script>
+        <script>
+          $LAB.script("js/elements.js").wait()
+          .script("js/game.js").wait()
+          .script("js/handlers.js").wait()
+          .script("js/main.js").wait(function() {
+            window.addEventListener("load", function() {
+              document.addEventListener("click", handlers.clickHandler, false );
+            });
+          });
+        </script>
+
     </body>
 </html>
