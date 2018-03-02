@@ -9,12 +9,7 @@ const game = (() => {
   let players = [];
   let turn = 0;
   const setNumberOfPlayers = (id) => {
-    // if (id === "1-player") {
-    //   return false;
-    // } else {
       isTwoPlayers = true;
-    //   return true;
-    // }
   };
 
   const setDifficulty = (id) => {
