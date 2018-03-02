@@ -1,79 +1,89 @@
 "use strict";
 
-const game = (() => {
-  let board = [
-                0,0,0,
-                0,0,0,
-                0,0,0
-              ];
-  let isTwoPlayers = false;
-  let difficulty = 0;
-  let players = [];
-
-  const setNumberOfPlayers = (id) => {
-    // if (id === "1-player") {
-    //   return false;
-    // } else {
-      isTwoPlayers = true;
-    //   return true;
-    // }
-  };
-
-  const setDifficulty = (id) => {
-    // 0 = normal, 1 = hard
-    if (id === 'hard') {
-      difficulty = 1;
-    }
-  };
-
-  const reset = () => {
-    // TODO
-    isTwoPlayers = false;
-    difficulty = 0;
-    // TODO toggle visibility
-  };
-
-  const init = (inputs) => {
-    let names = inputs.filter((input) => input.value !== '');
-    console.log(names);
-    // names.forEach((name, index) => {
-    //   // if (input.value !== '') {
-    //     game.createPlayer(input.value, index);
-    //   // }
-    // });
-
-    if (players.length === 1) {
-      // create computer player
-      players.push(computerPlayer());
-      toggle.visibility("difficulty-select"); // show
-
-    } else {
-      start();
-    }
-
-  };
-
-  const start = () => {
-    toggle.visibility("info");
-    toggle.visibility("board");
-  };
-
-  const createPlayer = (name, index) => {
-    let p = player(name, index);
-    players.push(p);
-  }
-
-  const debug = () => {
-    console.log('isTwoPlayers: ' + isTwoPlayers + '\n' +
-                'difficulty: ' + difficulty + '\n');
-                players.forEach((player) => {
-                  console.log(player.name);
-                  console.log(player.playerMark);
-                });
-  }
-
-  return { board, setNumberOfPlayers, reset, setDifficulty, start, init, debug, createPlayer };
-})();
+// const game = (() => {
+//   let board = [
+//                 0,0,0,
+//                 0,0,0,
+//                 0,0,0
+//               ];
+//   let isTwoPlayers = false;
+//   let difficulty = 0;
+//   let players = [];
+//   let turn = 0;
+//   const setNumberOfPlayers = (id) => {
+//     // if (id === "1-player") {
+//     //   return false;
+//     // } else {
+//       isTwoPlayers = true;
+//     //   return true;
+//     // }
+//   };
+//
+//   const setDifficulty = (id) => {
+//     // 0 = normal, 1 = hard
+//     if (id === 'hard') {
+//       difficulty = 1;
+//     }
+//   };
+//
+//   const reset = () => {
+//     // TODO
+//     isTwoPlayers = false;
+//     difficulty = 0;
+//     // TODO toggle visibility
+//   };
+//
+//   const init = (inputs) => {
+//     // set up players
+//     let names = inputs.filter((input) => input.value !== '');
+//     names.forEach((name, index) => game.createPlayer(name.value, index));
+//
+//     if (players.length === 1) {
+//       // create computer player
+//       players.push(computerPlayer());
+//       toggle.visibility("difficulty-select"); // show
+//     } else {
+//       start();
+//     }
+//   };
+//
+//   const start = () => {
+//     toggle.visibility("info");
+//     toggle.visibility("board");
+//     render();
+//   };
+//
+//   const createPlayer = (name, index) => {
+//     let p = player(name, index);
+//     players.push(p);
+//   }
+//
+//   const render = (tileClicked) => {
+//     board[tileClicked] = players[turn].playerMark;
+//     updateTurn();
+//   };
+//
+//   const updateTurn = () => {
+//     if (turn === 0) {
+//       turn = 1;
+//     } else {
+//       turn = 0;
+//     }
+//   };
+//
+//   const checkForWin = () => {
+//     // TODO
+//   };
+//
+//   const debug = () => {
+//     players.forEach((player, index) => {
+//       console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
+//     });
+//     console.table(board);
+//   }
+//
+//   return { setNumberOfPlayers, reset, setDifficulty, start, init, debug, createPlayer, render };
+// })();
 
 // ==================== Player ================================================
 const player = (name, index) => {
@@ -104,43 +114,6 @@ const ai = () => {
     // TODO
   };
 };
-
-// ==================== HANDLERS =============================================
-const handlers = (() => {
-  const clickHandler = (e) => {
-    const elementClicked = e.target;
-    switch (elementClicked.id) {
-      case "2-player" :
-        toggle.visibility("player-2-input");
-        game.setNumberOfPlayers(elementClicked);
-      case "1-player" :
-        toggle.visibility("player-select");
-        toggle.visibility("name-input");
-        break;
-      case "name-input-submit-btn" :
-        let inputs = elements.inputs;
-        console.log(inputs);
-        game.init(inputs);
-        break;
-      case "normal" :
-      case "hard" :
-        game.setDifficulty();
-        game.start();
-        break;
-    }
-
-    if (elementClicked.classList.contains("tile")) {
-      // TODO
-      console.log(`tile #${elementClicked.id}`);
-    } else if (elementClicked.classList.contains("debug")) {
-      game.debug();
-    }
-  };
-  const display = {};
-
-  return { clickHandler, display };
-})();
-
 
 const toggle = (() => {
   const visibility = (id) => {
