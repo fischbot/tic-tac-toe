@@ -73,9 +73,7 @@
           .script("js/game.js").wait()
           .script("js/handlers.js").wait()
           .script("js/main.js").wait(function() {
-            window.addEventListener("load", function() {
-              document.addEventListener("click", handlers.clickHandler, false );
-            });
+            main();
           });
         </script>
 

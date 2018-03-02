@@ -128,6 +128,8 @@ const toggle = (() => {
   return { visibility };
 })();
 
-window.addEventListener("load", function() {
-  document.addEventListener("click", handlers.clickHandler, false );
-});
+const main = (() => {
+    window.addEventListener("load", function() {
+      document.addEventListener("click", handlers.clickHandler, false );
+    });
+})();
