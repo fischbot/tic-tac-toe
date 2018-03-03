@@ -35,6 +35,10 @@ const game = (() => {
     }
   };
 
+  const isSpaceTaken = (element) => {
+    return element.classList.contains("space-taken");
+  };
+
   const render = (tileClicked) => {
     board[tileClicked] = players[turn].playerMark;
     updateTurn();
