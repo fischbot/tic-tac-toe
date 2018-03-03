@@ -4,10 +4,14 @@ const game = (() => {
                 0,0,0,
                 0,0,0
               ];
-  let isTwoPlayers = false;
-  let difficulty = 0;
+
   let players = [];
   let turn = 0;
+  let settings = {
+    difficulty : 0,
+    numOfPlayers : 1
+  };
+
 
   const checkForWin = () => {
     // TODO
@@ -76,5 +80,5 @@ const game = (() => {
     console.table(board);
   }
 
-  return { setNumberOfPlayers, reset, setDifficulty, start, init, debug, createPlayer, render };
+  return { reset, setDifficulty, start, init, debug, createPlayer, render, settings };
 })();
