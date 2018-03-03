@@ -2,12 +2,13 @@ const handlers = (() => {
   const clickHandler = (e) => {
     const elementClicked = e.target;
     switch (elementClicked.id) {
+      // ===== Player Select Buttons =================================
       case "2-player" :
-        toggle.visibility("player-2-input");
-        game.setNumberOfPlayers(elementClicked);
+        game.settings.numOfPlayers = 2;
       case "1-player" :
-        toggle.visibility("player-select");
-        toggle.visibility("name-input");
+        display.nameInputs(game.settings.numOfPlayers);
+        toggle.visibility("player-select");   // hide
+        toggle.visibility("name-input");      // show
         break;
       case "name-input-submit-btn" :
         let inputs = Array.prototype.slice.call(elements.retrieve("input")); // convert from nodelist to array
