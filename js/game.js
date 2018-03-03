@@ -59,7 +59,6 @@ const game = (() => {
   const start = () => {
     toggle.visibility("info");
     toggle.visibility("board");
-    render();
   };
 
   const updateTurn = () => {
