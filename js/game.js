@@ -42,7 +42,7 @@ const game = (() => {
 
   const reset = () => {
     // TODO
-    isTwoPlayers = false;
+    // isTwoPlayers = false;
     difficulty = 0;
     // TODO toggle visibility
   };
