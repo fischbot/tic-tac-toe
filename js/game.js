@@ -8,7 +8,7 @@ const game = (() => {
   let players = [];
   let turn = 0;
   let settings = {
-    difficulty : 0,
+    difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
     numOfPlayers : 1
   };
 
