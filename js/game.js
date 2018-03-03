@@ -24,8 +24,7 @@ const game = (() => {
 
   const init = (inputs) => {
     // set up players
-    let names = inputs.filter((input) => input.value !== '');
-    names.forEach((name, index) => game.createPlayer(name.value, index));
+    inputs.forEach((name, index) => game.createPlayer(name.value, index));
 
     if (players.length === 1) {
       // create computer player
