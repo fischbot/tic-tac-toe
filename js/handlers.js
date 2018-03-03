@@ -10,11 +10,32 @@ const handlers = (() => {
         toggle.visibility("player-select");   // hide
         toggle.visibility("name-input");      // show
         break;
+      // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :
         let inputs = Array.prototype.slice.call(elements.retrieve("input")); // convert from nodelist to array
-        console.log(inputs);
-        game.init(inputs);
+        let missingCount = 0;
+        // check all inputs for values
+        inputs.forEach((input, index) => {
+          if (elements.isMissingValue(input)) {
+            alert ("Enter Player " + (index + 1) + " Name");
+            missingCount++;
+          }
+        });
+        if (missingCount === 0) {
+          // all inputs have values
+          game.init(inputs);
+        }
+
+
+        // if (inputs[0].value === "" || inputs[1].value === "") {
+        //   // TODO display message
+        //   alert("Enter Player Name");
+        // } else {
+        //   game.init(inputs);
+        // }
         break;
+
+      // ===== Difficulty Select Buttons =============================
       case "normal" :
       case "hard" :
         game.setDifficulty();
