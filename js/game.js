@@ -47,17 +47,6 @@ const game = (() => {
     // TODO toggle visibility
   };
 
-  const setDifficulty = (id) => {
-    // 0 = normal, 1 = hard
-    if (id === 'hard') {
-      difficulty = 1;
-    }
-  };
-
-  const setNumberOfPlayers = (id) => {
-      isTwoPlayers = true;
-  };
-
   const start = () => {
     toggle.visibility("info");
     toggle.visibility("board");
@@ -79,5 +68,5 @@ const game = (() => {
     console.table(board);
   }
 
-  return { reset, setDifficulty, start, init, debug, createPlayer, render, settings };
+  return { reset, start, init, debug, createPlayer, render, settings };
 })();

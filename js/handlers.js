@@ -38,7 +38,6 @@ const handlers = (() => {
       // ===== Difficulty Select Buttons =============================
       case "normal" :
       case "hard" :
-        game.setDifficulty();
         game.start();
         break;
     }
