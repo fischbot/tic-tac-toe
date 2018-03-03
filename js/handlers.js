@@ -25,14 +25,6 @@ const handlers = (() => {
           // all inputs have values
           game.init(inputs);
         }
-
-
-        // if (inputs[0].value === "" || inputs[1].value === "") {
-        //   // TODO display message
-        //   alert("Enter Player Name");
-        // } else {
-        //   game.init(inputs);
-        // }
         break;
 
       // ===== Difficulty Select Buttons =============================
