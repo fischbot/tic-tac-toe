@@ -32,5 +32,8 @@ const elements = (() => {
     }
   };
 
-  return { retrieve, create, append };
+  const isMissingValue = (input) => {
+    return input.value === "";
+  };
+  return { retrieve, create, append, isMissingValue };
 })();
