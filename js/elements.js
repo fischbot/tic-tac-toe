@@ -1,6 +1,10 @@
 const elements = (() => {
   const retrieve = (classIdOrTag) => {
-    return document.querySelector(`${classIdOrTag}`);
+    if (classIdOrTag[0] === '#') {
+      return document.getElementById(`${classIdOrTag}`);
+    } else {
+      return document.querySelectorAll(`${classIdOrTag}`);
+    }
   };
 
   const create = (elementType, classNameOrId) => {
@@ -27,5 +31,6 @@ const elements = (() => {
       console.error(`Cannot append ${child} to ${parent}`);
     }
   };
+
   return { retrieve, create, append };
 })();
