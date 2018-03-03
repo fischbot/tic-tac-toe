@@ -12,7 +12,6 @@ const game = (() => {
     numOfPlayers : 1
   };
 
-
   const checkForWin = () => {
     // TODO
   };
@@ -40,8 +39,14 @@ const game = (() => {
   };
 
   const render = (tileClicked) => {
-    board[tileClicked] = players[turn].playerMark;
-    updateTurn();
+    if (board[tileClicked.id] === 0) {
+      board[tileClicked.id] = players[turn].playerMark;
+      console.log(tileClicked);
+      elements.setText(tileClicked, players[turn].playerMark);
+      // TODO checkForWin
+      updateTurn();
+    }
+
   };
 
   const reset = () => {
