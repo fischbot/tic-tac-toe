@@ -51,7 +51,6 @@ const handlers = (() => {
       game.debug();
     }
   };
-  const display = {};
 
-  return { clickHandler, display };
+  return { clickHandler };
 })();
