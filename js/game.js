@@ -76,5 +76,5 @@ const game = (() => {
     console.table(board);
   }
 
-  return { reset, start, init, debug, createPlayer, render, settings };
+  return { reset, start, init, debug, createPlayer, render, settings, isSpaceTaken };
 })();
