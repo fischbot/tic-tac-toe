@@ -35,5 +35,9 @@ const elements = (() => {
   const isMissingValue = (input) => {
     return input.value === "";
   };
-  return { retrieve, create, append, isMissingValue };
+
+  const setText = (elementId, text) => {
+    elementId.innerText = text;
+  };
+  return { retrieve, create, append, isMissingValue, setText };
 })();
