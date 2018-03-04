@@ -60,6 +60,13 @@ const game = (() => {
     players.push(p);
   }
 
+  const gameOver = (player) => {
+    // update scoreboard
+    alert (`${player.name} wins!`)
+    // ask to play again
+      // reset
+  };
+
   const init = (inputs) => {
     // set up players
     inputs.forEach((name, index) => game.createPlayer(name.value, index));
@@ -82,7 +89,7 @@ const game = (() => {
       board[tileClicked.id] = players[turn].playerMark;
       console.log(tileClicked);
       elements.setText(tileClicked, players[turn].playerMark);
-      // TODO checkForWin
+      checkForWin();
       updateTurn();
     }
 
