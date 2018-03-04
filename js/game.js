@@ -44,15 +44,8 @@ const game = (() => {
         }
 
         // Check for win
-        if (total === 3) {
-          // gameOver("X");
-          alert("X Wins!");
-          isWon = true;
-          isRoundOver = true;
-        } else if (total === 300) {
-          // gameOver("O");
-          alert("O Wins!");
-          isWon = true;
+        if (total === 3 || total === 300) {
+          gameOver(players[turn]);
           isRoundOver = true;
         } else {
           total = 0;
