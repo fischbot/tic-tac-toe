@@ -67,10 +67,11 @@ const game = (() => {
   }
 
   const gameOver = (msg) => {
-    // update scoreboard
     alert (msg);
     // ask to play again
       // reset
+    // update score
+    players[turn].score++;
     display.updateScores();
   };
 
