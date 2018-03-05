@@ -55,7 +55,7 @@ const game = (() => {
       }
     });
     if (tileCount === 9 && !isWon) { // all spaces are taken
-      alert("It's a tie!");
+      gameOver(`It's a tie!`);
       // run only if all tiles are taken and no one won
     }
 
@@ -65,9 +65,9 @@ const game = (() => {
     players.push(p);
   }
 
-  const gameOver = (player) => {
+  const gameOver = (msg) => {
     // update scoreboard
-    alert (`${player.name} wins!`)
+    alert (msg);
     // ask to play again
       // reset
   };
