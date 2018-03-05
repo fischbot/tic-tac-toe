@@ -118,11 +118,10 @@ const game = (() => {
     display.initializeScoreboard();
   };
 
-  const swapPlayerMarks = () => { // TODO
-      let mark1 = players[0].playerMark;
-      let mark2 = players[1].playerMark;
-      players[0].playerMark = mark2;
-      players[1].playerMark = mark1;
+  const swapPlayerMarks = () => {
+      let temp = players[0].playerMark;
+      players[0].playerMark = players[1].playerMark;
+      players[1].playerMark = temp;
   };
 
 
