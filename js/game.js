@@ -15,6 +15,8 @@ const game = (() => {
 
   const checkForWin = () => { // TODO refactor
     let boardStartAndEndPoints = [
+      // index 0 = start location, index 1 = end location,
+      // if there is an index 2 = how many tiles to add
       [0,2],[3,5],[6,8],[0,6,3],[1,7,3],[2,8,3],[0,8,4],[2,6,2]
     ];
     let isRoundOver = false;
