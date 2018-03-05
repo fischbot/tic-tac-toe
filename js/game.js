@@ -7,6 +7,7 @@ const game = (() => {
 
   let players = [];
   let turn = 0;
+  let isWon = false;
   let settings = {
     difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
     numOfPlayers : 1
@@ -47,6 +48,7 @@ const game = (() => {
         if (total === 3 || total === 300) {
           gameOver(players[turn]);
           isRoundOver = true;
+          isWon = true;
         } else {
           total = 0;
         }
@@ -55,6 +57,21 @@ const game = (() => {
     } // end while
   };
 
+  const checkForTie = () => {
+    let tileCount = 0;
+    board.forEach( (tile) => {
+      if (tile === 0) {
+        return
+      } else {
+        tileCount++;
+      }
+    });
+    if (tileCount === 9 && !isWon) { // all spaces are taken
+      alert("It's a tie!");
+      // run only if all tiles are taken and no one won
+    }
+
+  };
   const createPlayer = (name, index) => {
     let p = player(name, index);
     players.push(p);
@@ -90,6 +107,7 @@ const game = (() => {
       console.log(tileClicked);
       elements.setText(tileClicked, players[turn].playerMark);
       checkForWin();
+      checkForTie();
       updateTurn();
     }
 
