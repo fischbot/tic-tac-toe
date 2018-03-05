@@ -44,7 +44,19 @@ const display = (() => {
     }
   };
 
-  return { nameInputs };
+  const initializeScoreboard = () => {
+    let players = game.getPlayers();
+    players.forEach((player, index) => {
+      const playerId = "#p" + (index + 1);
+      const name = document.createElement("p");
+      const score = document.createElement("p");
+      elements.append(playerId, name);
+      name.innerText = player.name;
+      elements.append(playerId, score);
+      score.innerText = player.score;
+      score.id = playerId + "-score";
+    });
+  };
 })();
 
 const toggle = (() => {

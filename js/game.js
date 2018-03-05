@@ -112,6 +112,7 @@ const game = (() => {
   const start = () => {
     toggle.visibility("info");
     toggle.visibility("board");
+    display.initializeScoreboard();
   };
 
   const updateTurn = () => {
