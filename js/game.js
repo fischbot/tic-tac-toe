@@ -73,6 +73,7 @@ const game = (() => {
     // update score
     players[turn].score++;
     display.updateScores();
+    swapPlayerMarks();
   };
 
   const init = (inputs) => {
@@ -116,6 +117,14 @@ const game = (() => {
     toggle.visibility("board");
     display.initializeScoreboard();
   };
+
+  const swapPlayerMarks = () => { // TODO
+      let mark1 = players[0].playerMark;
+      let mark2 = players[1].playerMark;
+      players[0].playerMark = mark2;
+      players[1].playerMark = mark1;
+  };
+
 
   const updateTurn = () => {
     if (turn === 0) {
