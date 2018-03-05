@@ -66,6 +66,16 @@ const display = (() => {
       score.innerText = player.score;
     });
   };
+
+  const marksMessage = () => {
+      let players = game.getPlayers();
+      message.innerText = players[0].name + ": " + players[0].playerMark +
+                          " *** " + players[1].name + ": " +
+                          players[1].playerMark;
+  };
+
+  const clearTiles = () => {};
+  return { nameInputs, initializeScoreboard, updateScores, marksMessage };
 })();
 
 const toggle = (() => {
