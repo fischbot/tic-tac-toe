@@ -71,6 +71,7 @@ const game = (() => {
     alert (msg);
     // ask to play again
       // reset
+    display.updateScores();
   };
 
   const init = (inputs) => {

@@ -57,6 +57,15 @@ const display = (() => {
       score.id = playerId + "-score";
     });
   };
+
+  const updateScores = () => {
+    let players = game.getPlayers();
+    players.forEach((player, index) => {
+      const scoreId = "#p" + (index + 1) + "-score";
+      const score = document.getElementById(`${scoreId}`);
+      score.innerText = player.score;
+    });
+  };
 })();
 
 const toggle = (() => {
