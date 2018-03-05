@@ -8,7 +8,13 @@ const handlers = (() => {
         display.nameInputs(game.settings.numOfPlayers);
         toggle.visibility("player-select");   // hide
         toggle.visibility("name-input");      // show
+        break; // TODO remove this break when single player is ready
       case "one-player" :
+        alert("Single Player Vs. CPU Coming Soon!");
+        // TODO unhide this code and delete duplicate in "2-player" when single player is ready
+        // display.nameInputs(game.settings.numOfPlayers);
+        // toggle.visibility("player-select");   // hide
+        // toggle.visibility("name-input");      // show
         break;
       // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :
@@ -24,6 +30,7 @@ const handlers = (() => {
         if (missingCount === 0) {
           // all inputs have values
           game.init(inputs);
+          toggle.visibility("name-input");      // hide
         }
         break;
 
@@ -32,6 +39,8 @@ const handlers = (() => {
         game.settings.difficulty = 3;
       case "normal" :
         game.start();
+        toggle.visibility("difficulty-select"); // hide
+
         break;
     }
 
@@ -41,8 +50,6 @@ const handlers = (() => {
         game.render(elementClicked);
         elementClicked.classList.add("space-taken");
       }
-
-
     } else if (elementClicked.classList.contains("debug")) {
       game.debug();
     }

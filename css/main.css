@@ -173,9 +173,13 @@ header h1 {
 
 button:focus {
   outline: none;
+/* TODO remove when single player is ready */
+#player-select #one-player {
+  background: rgba(199, 170, 221, .4);
 }
 
-#player-select button:active,
+/* #player-select button:active, */
+#two-players:active,
 #difficulty-select button:active,
 #name-input-submit-btn:active {
 	transform: translateY(2px);
