@@ -21,6 +21,8 @@ const game = (() => {
     ];
     let isRoundOver = false;
     let total = 0;
+    let xWinTotal = 3;
+    let oWinTotal = 300;
     while (!isRoundOver) {
       boardStartAndEndPoints.forEach((set) => {
         let addTiles = set[2];
@@ -32,8 +34,7 @@ const game = (() => {
           }
         }
 
-        // Check for win
-        if (total === 3 || total === 300) {
+        if (total === xWinTotal || total === oWinTotal) {
           isRoundOver = true;
           isWon = true;
           gameOver(`${players[turn].name} wins!`);
