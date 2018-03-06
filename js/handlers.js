@@ -5,16 +5,10 @@ const handlers = (() => {
       // ===== Player Select Buttons =================================
       case "two-players" :
         game.settings.numOfPlayers = 2;
+      case "one-player" :
         display.nameInputs(game.settings.numOfPlayers);
         toggle.visibility("player-select");   // hide
         toggle.visibility("name-input");      // show
-        break; // TODO remove this break when single player is ready
-      case "one-player" :
-        alert("Single Player Vs. CPU Coming Soon!");
-        // TODO unhide this code and delete duplicate in "2-player" when single player is ready
-        // display.nameInputs(game.settings.numOfPlayers);
-        // toggle.visibility("player-select");   // hide
-        // toggle.visibility("name-input");      // show
         break;
       // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :
