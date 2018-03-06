@@ -82,7 +82,7 @@ const game = (() => {
 
   const init = (inputs) => {
     // set up players
-    inputs.forEach((name, index) => game.createPlayer(name.value, index));
+    inputs.forEach((name, index) => createPlayer(name.value, index));
 
     if (players.length === 1) {
       // create computer player
@@ -112,7 +112,6 @@ const game = (() => {
 
   const reset = () => {
     // TODO
-    // isTwoPlayers = false;
     difficulty = 0;
     // TODO toggle visibility
   };
@@ -126,8 +125,9 @@ const game = (() => {
   };
 
   const start = () => {
-    toggle.visibility("info");
-    toggle.visibility("board");
+    toggle.visibility("message");     // show
+    toggle.visibility("board");       // show
+    toggle.visibility("scoreboard");  // show
     display.initializeScoreboard();
   };
 
