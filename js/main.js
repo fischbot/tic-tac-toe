@@ -20,18 +20,6 @@ const computerPlayer = () => {
   return { name, playerMark, score };
 }
 
-// ==================== AI ====================================================
-// TODO
-const ai = () => {
-  const randomizer = (multiplier) => {
-    return Math.floor(Math.random() * multiplier);
-  };
-
-  const difficulty = () => {
-    // TODO
-  };
-};
-
 // ==================== Display ===============================================
 
 const display = (() => {
