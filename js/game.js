@@ -8,6 +8,7 @@ const game = (() => {
   let players = [];
   let turn = 0;
   let isWon = false;
+  let isTied = false;
   let settings = {
     difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
     numOfPlayers : 1
@@ -55,9 +56,11 @@ const game = (() => {
         tileCount++;
       }
     });
-    if (tileCount === 9 && !isWon) { // all spaces are taken
+    if (tileCount === 9 && !isWon) {
+      // all spaces are taken
       gameOver(`It's a tie!`);
       turn = 0; // first player goes after a tie
+      isTied = true;
     }
 
   };
@@ -105,7 +108,10 @@ const game = (() => {
       if (!isWon) {
         checkForTie();
       }
-      updateTurn();
+
+      if (!isTied) {
+        updateTurn();
+      }
     }
 
   };
