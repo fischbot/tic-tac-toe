@@ -100,10 +100,11 @@ const game = (() => {
   const render = (tileClicked) => {
     if (board[tileClicked.id] === 0) {
       board[tileClicked.id] = players[turn].playerMark;
-      console.log(tileClicked);
       elements.setText(tileClicked, players[turn].playerMark);
       checkForWin();
-      checkForTie();
+      if (!isWon) {
+        checkForTie();
+      }
       updateTurn();
     }
 
