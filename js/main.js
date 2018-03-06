@@ -87,7 +87,7 @@ const display = (() => {
 
   const playerTurnMessage = (player) => {
     const name = document.getElementById("player-turn-message");
-    name.innerText = player + "'s turn";
+    name.innerText = (player.toUpperCase() + "'S TURN");
   }
 
   return { nameInputs, initializeScoreboard, updateScores, winnerMessage, clearBoard, playerTurnMessage };
