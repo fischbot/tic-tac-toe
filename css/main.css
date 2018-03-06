@@ -125,8 +125,10 @@ button:focus {
   color: #fff;
 }
 
+/* ================================= HEADER ================================= */
 header {
-  background: #52186B;
+  /* background: #52186B; */
+  background: rgba(82, 24, 107, 0.8);
 }
 
 header h1 {
@@ -140,14 +142,42 @@ header h1 {
   text-align: center;
 }
 
+/* ================================== Info ================================== */
 #info {
   font-size: 1.4em;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-bottom: 60px;
 }
 
 #info h3 {
   text-shadow: 1px 1px 3px #222;
 }
 
+#game-over {
+  display: flex;
+  flex-direction: column;
+}
+
+#winner-message {
+  text-align: center;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+#play-again-btn {
+  justify-self: end;
+}
+
+ #player-turn-message {
+  text-align: center;
+  font-size: 2em;
+  letter-spacing: 1px;
+  border: 1px solid red;
+  margin: 0;
+}
+
+#game-over,
 #player-select,
 #name-input,
 #difficulty-select {
@@ -161,7 +191,8 @@ header h1 {
 
 #player-select button,
 #difficulty-select button,
-#name-input-submit-btn {
+#name-input-submit-btn,
+#play-again-btn {
   align-self: center;
   background: #C7AADD;
   color: #241F29;
@@ -175,17 +206,16 @@ header h1 {
   border-left: 1px solid #9B61B1
 }
 
-button:focus {
-  outline: none;
 /* TODO remove when single player is ready */
-#player-select #one-player {
-  background: rgba(199, 170, 221, .4);
+#player-select #one-player, #overlay {
+  background: rgba(199, 170, 221, .7);
 }
 
 /* #player-select button:active, */
 #two-players:active,
 #difficulty-select button:active,
-#name-input-submit-btn:active {
+#name-input-submit-btn:active,
+#play-again-btn:active {
 	transform: translateY(2px);
   box-shadow: 1px 1px 3px #222;
 }
