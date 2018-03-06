@@ -97,6 +97,8 @@ const game = (() => {
       // create computer player
       // players.push(computerPlayer());
       createPlayer("CPU", 1);
+      // toggle.visibility("difficulty-select"); // show
+    // } else {
       start();
     }
   };
