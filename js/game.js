@@ -68,7 +68,6 @@ const game = (() => {
   }
 
   const gameOver = (msg) => {
-    toggle.visibility("message");   // hide
     toggle.visibility("overlay");   // show
     display.winnerMessage(msg);
     toggle.visibility("game-over"); // show
@@ -120,13 +119,11 @@ const game = (() => {
   const nextRound = () => {
     toggle.visibility("overlay"); // hide
     isWon = false;
-    display.marksMessage();
     display.clearBoard();
     board = [0,0,0,0,0,0,0,0,0];
   };
 
   const start = () => {
-    toggle.visibility("message");     // show
     toggle.visibility("board");       // show
     toggle.visibility("scoreboard");  // show
     display.initializeScoreboard();

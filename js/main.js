@@ -69,13 +69,6 @@ const display = (() => {
     });
   };
 
-  const marksMessage = () => {
-      let players = game.getPlayers();
-      message.innerText = players[0].name + ": " + players[0].playerMark +
-                          " *** " + players[1].name + ": " +
-                          players[1].playerMark;
-  };
-
   const clearBoard = () => {
     const tiles = document.querySelectorAll(".tile");
     tiles.forEach((tile) => {
@@ -92,7 +85,7 @@ const display = (() => {
     p.innerText = msg;
   };
 
-  return { nameInputs, initializeScoreboard, updateScores, marksMessage, winnerMessage, clearBoard };
+  return { nameInputs, initializeScoreboard, updateScores, winnerMessage, clearBoard };
 })();
 
 const toggle = (() => {
