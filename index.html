@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -27,11 +28,12 @@
                   wins!</p>
               </div>
             </div>
+            <button class="debug" style="background: #fff;">DEBUG</button>
           </header>
           <main>
             <div class="container">
               <div id="info">
-                <div id="player-select">
+                <div id="player-select" class="">
                   <h3>How Many Players?</h3>
                   <button class="player-select-btn" id="one-player">1</button>
                   <button class="player-select-btn" id="two-players">2</button>
@@ -63,7 +65,14 @@
                 <div class="tile" id="7"></div>
                 <div class="tile" id="8"></div>
               </div><!-- /#board -->
-            </div>
+
+              <div id="scoreboard" class="hidden">
+                <h2>Scoreboard</h2>
+                <div id="p1">
+                </div>
+                <div id="p2">
+                </div>
+              </div>
           </main>
           <footer>
             <p>
