@@ -10,16 +10,18 @@ const player = (name, index) => {
 };
 
 // ==================== Computer Player =======================================
+// TODO
 const computerPlayer = () => {
   // TODO difficulty level
   // TODO logic for each difficulty level
   const name = "CPU";
   const playerMark = 'O';
-
-  return { name, playerMark };
+  const score = 0;
+  return { name, playerMark, score };
 }
 
 // ==================== AI ====================================================
+// TODO
 const ai = () => {
   const randomizer = (multiplier) => {
     return Math.floor(Math.random() * multiplier);
