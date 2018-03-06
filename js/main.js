@@ -74,8 +74,15 @@ const display = (() => {
                           players[1].playerMark;
   };
 
-  const clearTiles = () => {};
-  return { nameInputs, initializeScoreboard, updateScores, marksMessage };
+  const clearBoard = () => {
+    const tiles = document.querySelectorAll(".tile");
+    tiles.forEach((tile) => {
+      tile.innerText = "";
+      if (tile.classList.contains("space-taken")) {
+        tile.classList.remove("space-taken");
+      }
+    });
+  };
 })();
 
 const toggle = (() => {
