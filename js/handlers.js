@@ -42,6 +42,11 @@ const handlers = (() => {
         toggle.visibility("difficulty-select"); // hide
 
         break;
+
+      case "play-again-btn" :
+        game.nextRound();
+        toggle.visibility("game-over");
+        break;
     }
 
     // ===== Tiles ===================================================
