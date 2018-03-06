@@ -108,19 +108,19 @@ const game = (() => {
   };
 
   const render = (tileClicked) => {
-    if (board[tileClicked.id] === 0) {
-      board[tileClicked.id] = players[turn].playerMark;
-      elements.setText(tileClicked, players[turn].playerMark);
-      checkForWin();
-      if (!isWon) {
-        checkForTie();
-      }
+      if (board[tileClicked.id] === 0) {
+        board[tileClicked.id] = players[turn].playerMark;
+        elements.setText(tileClicked, players[turn].playerMark);
+        checkForWin();
+        if (!isWon) {
+          checkForTie();
+        }
 
-      if (!isTied) {
-        updateTurn();
+        if (!isTied) {
+          updateTurn();
+        }
+        display.playerTurnMessage(players[turn].name);
       }
-      display.playerTurnMessage(players[turn].name);
-    }
 
       // Computer's turn if computer player exists
       if (turn === 1 && players[1].name === "CPU") {
