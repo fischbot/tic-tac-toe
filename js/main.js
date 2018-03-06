@@ -85,7 +85,12 @@ const display = (() => {
     p.innerText = msg;
   };
 
-  return { nameInputs, initializeScoreboard, updateScores, winnerMessage, clearBoard };
+  const playerTurnMessage = (player) => {
+    const name = document.getElementById("player-turn-message");
+    name.innerText = player + "'s turn";
+  }
+
+  return { nameInputs, initializeScoreboard, updateScores, winnerMessage, clearBoard, playerTurnMessage };
 })();
 
 const toggle = (() => {
