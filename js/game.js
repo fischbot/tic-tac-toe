@@ -169,7 +169,11 @@ const game = (() => {
       console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
     });
     console.table(board);
+    console.log(`difficulty: ${settings.difficulty};`);
+    console.log(`number of players: ${settings.numOfPlayers};`);
+    console.log(`turn: ${turn}`);
+    console.log(`isWon: ${isWon}`);
   }
 
-  return { reset, start, init, debug, createPlayer, render, settings, isSpaceTaken };
+  return { reset, start, init, debug, render, settings, isSpaceTaken, getPlayers, nextRound };
 })();
