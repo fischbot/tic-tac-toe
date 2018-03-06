@@ -70,13 +70,19 @@ const game = (() => {
     players.push(p);
   }
 
+  const updateWinnerScore = () => {
+    players[turn].score++;
+    display.updateScores();
+  };
+
   const gameOver = (msg) => {
     toggle.visibility("overlay");   // show
     display.winnerMessage(msg);
     toggle.visibility("game-over"); // show
-    players[turn].score++;
-    display.updateScores();
-
+    toggle.visibility("player-turn-message"); // hide
+    if (isWon) {
+      updateWinnerScore();
+    }
   };
 
   const getPlayers = () => {
