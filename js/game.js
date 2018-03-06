@@ -57,10 +57,11 @@ const game = (() => {
     });
     if (tileCount === 9 && !isWon) { // all spaces are taken
       gameOver(`It's a tie!`);
-      // run only if all tiles are taken and no one won
+      turn = 0; // first player goes after a tie
     }
 
   };
+
   const createPlayer = (name, index) => {
     let p = player(name, index);
     players.push(p);
