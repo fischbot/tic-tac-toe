@@ -83,6 +83,14 @@ const display = (() => {
       }
     });
   };
+
+  const winnerMessage = (msg) => {
+    let players = game.getPlayers();
+    let p = document.getElementById("winner-message");
+    p.innerText = msg;
+  };
+
+  return { nameInputs, initializeScoreboard, updateScores, marksMessage, winnerMessage, clearBoard };
 })();
 
 const toggle = (() => {
