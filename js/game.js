@@ -132,9 +132,11 @@ const game = (() => {
   };
 
   const swapPlayerMarks = () => {
-      let temp = players[0].playerMark;
-      players[0].playerMark = players[1].playerMark;
-      players[1].playerMark = temp;
+    // unused for now, but could be used in future functionality to give
+    // players the option of which mark they want
+    let temp = players[0].playerMark;
+    players[0].playerMark = players[1].playerMark;
+    players[1].playerMark = temp;
   };
 
 
