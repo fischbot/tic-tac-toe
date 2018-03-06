@@ -112,6 +112,14 @@ const game = (() => {
     // TODO toggle visibility
   };
 
+  const nextRound = () => {
+    toggle.visibility("overlay"); // hide
+    isWon = false;
+    display.marksMessage();
+    display.clearBoard();
+    board = [0,0,0,0,0,0,0,0,0];
+  };
+
   const start = () => {
     toggle.visibility("info");
     toggle.visibility("board");
