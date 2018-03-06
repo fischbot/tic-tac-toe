@@ -122,6 +122,21 @@ const game = (() => {
       display.playerTurnMessage(players[turn].name);
     }
 
+      // Computer's turn if computer player exists
+      if (turn === 1 && players[1].name === "CPU") {
+          window.setTimeout(() => {
+            ai.render();
+            checkForWin();
+            if (!isWon) {
+              checkForTie();
+            }
+
+            if (!isTied) {
+              updateTurn();
+            }
+            display.playerTurnMessage(players[turn].name);
+          }, 2000);
+      }
   };
 
   const reset = () => {
