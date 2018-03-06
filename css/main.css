@@ -224,20 +224,41 @@ header h1 {
   margin: 10px;
 }
 
+/* ================================== Main ================================== */
 main {
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-top: 60px;
+}
+
+main .container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: auto auto 1fr; */
 }
 
 #board {
   border: 12px double #fff;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  grid-column: 1 / 3;
+  position: relative;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 
 .tile {
@@ -264,14 +285,46 @@ footer a:hover {
   color: #9B61B1;
 }
 
+#board,
+#scoreboard {
+  background: #E786FE;
+  justify-self: center;
+}
 
+#scoreboard {
+  border: 12px double #fff;
+  text-align: center;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto 1fr;
+  justify-self: center;
+}
 
+#scoreboard h2 {
+  font-size: 2.4rem;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #fff;
+  grid-column: 1 / -1;
+}
+#scoreboard div {
+  font-size: 3.4em;
+  justify-self: center;
+  width: 100%;
+  padding: 0 10px;
+}
 
+#scoreboard p {
+  margin: 5px 0;
+}
 
+#p1 {
+  border-right: 1px dashed #fff;
+}
 
-
-
-
+#p2 {
+  border-left: 1px dashed #fff;
+}
 
 
 
