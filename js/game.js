@@ -67,13 +67,17 @@ const game = (() => {
   }
 
   const gameOver = (msg) => {
-    alert (msg);
-    // ask to play again
-      // reset
-    // update score
+    toggle.visibility("message");   // hide
+    toggle.visibility("overlay");   // show
+    display.winnerMessage(msg);
+    toggle.visibility("game-over"); // show
     players[turn].score++;
     display.updateScores();
-    swapPlayerMarks();
+
+  };
+
+  const getPlayers = () => {
+    return players;
   };
 
   const init = (inputs) => {
