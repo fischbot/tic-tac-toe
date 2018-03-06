@@ -112,6 +112,7 @@ const game = (() => {
       if (!isTied) {
         updateTurn();
       }
+      display.playerTurnMessage(players[turn].name);
     }
 
   };
@@ -124,15 +125,20 @@ const game = (() => {
 
   const nextRound = () => {
     toggle.visibility("overlay"); // hide
+    toggle.visibility("player-turn-message"); // show
     isWon = false;
+    isTied = false;
     display.clearBoard();
     board = [0,0,0,0,0,0,0,0,0];
+    display.playerTurnMessage(players[turn].name);
   };
 
   const start = () => {
     toggle.visibility("board");       // show
     toggle.visibility("scoreboard");  // show
     display.initializeScoreboard();
+    toggle.visibility("player-turn-message"); // show
+    display.playerTurnMessage(players[turn].name);
   };
 
   const swapPlayerMarks = () => {
