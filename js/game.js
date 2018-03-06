@@ -135,7 +135,9 @@ const game = (() => {
               updateTurn();
             }
             display.playerTurnMessage(players[turn].name);
+            toggle.visibility("disable-click"); // hide
           }, 2000);
+          toggle.visibility("disable-click"); // show
       }
   };
 
