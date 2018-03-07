@@ -17,34 +17,44 @@ const game = (() => {
   const checkForWin = () => {
     let boardStartAndEndPoints = [
       // index 0 = start location, index 1 = end location,
-      // if there is an index 2 = how many tiles to add
+      // index 2 = how many tiles to add
       [0,2,1],[3,5,1],[6,8,1],[0,6,3],[1,7,3],[2,8,3],[0,8,4],[2,6,2]
     ];
     let isRoundOver = false;
     let total = 0;
     let xWinTotal = 3;
     let oWinTotal = 300;
-    while (!isRoundOver) {
-      boardStartAndEndPoints.forEach((set) => {
-        let addTiles = set[2];
-        for (let i = set[0], end = set[1]; i <= end; i+= addTiles) {
-          if (board[i] === 'X') {
-            total += 1;
-          } else if (board[i] === 'O') {
-            total += 100;
+    // while (isRoundOver === false) {
+        for (let set = 0; set < boardStartAndEndPoints.length; set++) {
+          let addTiles = boardStartAndEndPoints[set][2];
+          let start = boardStartAndEndPoints[set][0];
+          let end = boardStartAndEndPoints[set][1];
+
+          for (let i = start; i <= end; i+= addTiles) {
+            if (board[i] === 'X') {
+              total += 1;
+            } else if (board[i] === 'O') {
+              total += 100;
+            }
+
+            if (total === 101) {
+              // skip to the next set
+              break;
+            }
+          }
+
+          if (total === xWinTotal || total === oWinTotal) {
+            // isRoundOver = true;
+            isWon = true;
+            gameOver(`${players[turn].name} wins!`);
+            break;
+          } else {
+            total = 0;
           }
         }
-
-        if (total === xWinTotal || total === oWinTotal) {
-          isRoundOver = true;
-          isWon = true;
-          gameOver(`${players[turn].name} wins!`);
-        } else {
-          total = 0;
-        }
-      }); // end forEach
-      isRoundOver = true;
-    } // end while
+      // }); // end forEach
+      // isRoundOver = true;
+    // } // end while
   };
 
   const checkForTie = () => {
