@@ -222,10 +222,10 @@ const game = (() => {
     // players.forEach((player, index) => {
     //   console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
     // });
-    console.log(board);
-    // console.log(`difficulty: ${settings.difficulty};`);
+    // console.log(board);
+    console.log(`two players? : ${settings.isTwoPlayers}`);
     // console.log(`number of players: ${settings.numOfPlayers};`);
-    // console.log(`turn: ${turn}`);
+    console.log(`turn: ${turn}`);
     // console.log(`isWon: ${isWon}`);
   }
 
