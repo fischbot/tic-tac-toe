@@ -23,7 +23,7 @@ const handlers = (() => {
         });
         if (missingCount === 0) {
           // all inputs have values
-          game.init(inputs);
+          game.playerSetup(inputs);
           toggle.visibility("name-input");      // hide
         }
         break;

@@ -89,7 +89,7 @@ const game = (() => {
     return players;
   };
 
-  const init = (inputs) => {
+  const playerSetup = (inputs) => {
     // set up players
     inputs.forEach((name, index) => createPlayer(name.value, index));
 
