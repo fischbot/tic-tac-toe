@@ -139,11 +139,17 @@ header h1 {
   margin: 40px 0;
 }
 
+/* ================================= Instructions =========================== */
 #instructions {
   text-align: center;
-  font-size: 1.6em;
+  text-shadow: 0px 0px 3px #222;
+  font-size: 1.4em;
+  background: #E686FE;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.4);
+}
+
+#instructions .container {
   max-width: 600px;
-  margin: 0 auto;
 }
 
 /* ================================== Info ================================== */
