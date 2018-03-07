@@ -155,9 +155,7 @@ header h1 {
 /* ================================== Info ================================== */
 #info {
   font-size: 1.4em;
-  grid-column: 1 / -1;
-  justify-self: center;
-  margin-bottom: 60px;
+  margin: 30px 0;
 }
 
 #info h3 {
@@ -175,11 +173,7 @@ header h1 {
   letter-spacing: 1px;
 }
 
-#play-again-btn {
-  justify-self: end;
-}
-
- #player-turn-message {
+#player-turn-message {
   text-align: center;
   font-size: 2em;
   letter-spacing: 1px;
@@ -243,11 +237,6 @@ main {
   margin-top: 60px;
 }
 
-main .container {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: auto auto 1fr; */
 }
 
 #board {
@@ -298,7 +287,7 @@ main .container {
 #board,
 #scoreboard {
   background: #E786FE;
-  justify-self: center;
+  float: left;
 }
 
 #scoreboard {
@@ -319,7 +308,7 @@ main .container {
 }
 #scoreboard div {
   font-size: 3.4em;
-  justify-self: center;
+  /* justify-self: center; */
   width: 100%;
   padding: 0 10px;
 }
