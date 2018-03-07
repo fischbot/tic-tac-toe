@@ -12,17 +12,6 @@ const ai = (() => {
     });
   };
 
-  const firstMove = () => {
-    let index = randomizer(9);
-    findEmptySpaces();
-    console.log(possibleMoveLocations);
-    while (!possibleMoveLocations.includes(index)) {
-      index = randomizer(game.board.length);
-      // console.log(index);
-    }
-    render(index); // TODO fix
-  };
-
   const checkLeft = (index) => {
     //if (index === 0 || index === 3 || index === 6) {
     //  return false;
@@ -69,5 +58,5 @@ const ai = (() => {
     // TODO
   };
 
-  return { firstMove, render};
+  return { update };
 })();
