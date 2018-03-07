@@ -141,6 +141,7 @@ const game = (() => {
       if (board[tileClicked.id] === 0) {
         board[tileClicked.id] = players[turn].playerMark;
         elements.setText(tileClicked, players[turn].playerMark);
+  const update = (tileClicked) => {
 
         runAfterTurnChecksAndUpdateTurnMessage();
       }
@@ -209,5 +210,5 @@ const game = (() => {
     // console.log(`isWon: ${isWon}`);
   }
 
-  return { reset, start, init, debug, render, settings, isSpaceTaken, getPlayers, nextRound, board, players };
+  return { reset, start, playerSetup, debug, update, settings, isSpaceTaken, getPlayers, nextRound, board, players };
 })();

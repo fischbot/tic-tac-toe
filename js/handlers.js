@@ -46,7 +46,7 @@ const handlers = (() => {
     // ===== Tiles ===================================================
     if (elementClicked.classList.contains("tile")) {
       if (!game.isSpaceTaken(elementClicked)) {
-        game.render(elementClicked);
+        game.update(elementClicked);
         elementClicked.classList.add("space-taken");
       }
     } else if (elementClicked.classList.contains("debug")) {

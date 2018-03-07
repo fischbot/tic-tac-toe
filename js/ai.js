@@ -54,7 +54,7 @@ const ai = (() => {
     return Math.floor(Math.random() * multiplier);
   };
 
-  const render = () => {
+  const update = () => {
     findEmptySpaces();
     let index;
     while (!possibleMoveLocations.includes(index)) {
