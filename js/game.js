@@ -191,7 +191,7 @@ const game = (() => {
 
   const start = () => {
     toggle.visibility("board");       // show
-    toggle.visibility("scoreboard");  // show
+    toggle.visibility("right-side-content");  // show
     display.initializeScoreboard();
     toggle.visibility("player-turn-message"); // show
     display.playerTurnMessage(players[turn].name);

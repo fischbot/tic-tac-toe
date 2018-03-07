@@ -57,6 +57,7 @@
 
               <div id="board" class="hidden">
                 <div id="overlay" class="hidden"></div>
+                <div id="disable-click" class="hidden"></div>
                 <div class="tile" id="0"></div>
                 <div class="tile" id="1"></div>
                 <div class="tile" id="2"></div>
@@ -68,18 +69,21 @@
                 <div class="tile" id="8"></div>
               </div><!-- /#board -->
 
-              <div id="scoreboard" class="hidden">
-                <h2>Scoreboard</h2>
-                <div id="p1">
+              <div id="right-side-content" class="hidden">
+                <div id="scoreboard">
+                  <h2>Scoreboard</h2>
+                  <div id="p1">
+                  </div>
+                  <div id="p2">
+                  </div>
                 </div>
-                <div id="p2">
-                </div>
+
                 <button id="reset-btn" class="hidden">Reset Game</button>
               </div>
           </main>
           <footer>
             <p>
-              &copy;2018 <a href="https://github.com/fischbot">fischbot</a>!
+              &copy;2018 <a href="https://github.com/fischbot" target="_blank">fischbot</a>!
             </p>
           </footer>
         </div><!-- /#page -->
@@ -87,6 +91,7 @@
         <script src="js/vendor/LAB.min.js"></script>
         <script>
           $LAB.script("js/elements.js").wait()
+          .script("js/ai.js").wait()
           .script("js/game.js").wait()
           .script("js/handlers.js").wait()
           .script("js/main.js").wait(function() {
