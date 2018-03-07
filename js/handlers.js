@@ -28,6 +28,9 @@ const handlers = (() => {
           toggle.visibility("name-input");      // hide
         }
         break;
+      case "reset-btn" :
+        game.reset();
+        break
 
       // ===== Difficulty Select Buttons =============================
       case "hard" :

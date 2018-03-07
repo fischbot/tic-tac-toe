@@ -166,9 +166,17 @@ const game = (() => {
 };
 
   const reset = () => {
-    // TODO
-    difficulty = 0;
-    // TODO toggle visibility
+    settings.isTwoPlayers = false;
+    settings.numOfPlayers = 1;
+    players = [];
+    turn = 0;
+    isWon = false;
+    isTied = false;
+    board.fill(0);
+    toggle.visibility("player-select"); // show
+    toggle.visibility("board"); // hide
+    toggle.visibility("right-side-content"); // hide
+    toggle.visibility("player-turn-message"); // hide
   };
 
   const nextRound = () => {
