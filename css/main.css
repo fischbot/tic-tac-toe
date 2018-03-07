@@ -134,8 +134,9 @@ header {
 header h1 {
   text-align: center;
   font-family: 'Chelsea Market', cursive;
-  font-size: 3em;
+  font-size: 4em;
   letter-spacing: 10px;
+  margin: 40px 0;
 }
 
 #instructions {
