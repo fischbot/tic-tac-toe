@@ -208,6 +208,12 @@ header h1 {
   border-left: 1px solid #9B61B1
 }
 
+.player-select-btn:hover,
+#difficulty-select-btn:hover,
+#name-input-submit-btn:hover,
+#play-again-btn:hover {
+  background: #A18BB7;
+  color: #fff;
 }
 
 #player-select-btn:active,
