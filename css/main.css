@@ -304,7 +304,15 @@ main {
 #board,
 #scoreboard {
   background: #E786FE;
+}
+
+#board,
+#right-side-content {
   float: left;
+}
+
+#right-side-content {
+  text-align: center;
 }
 
 #scoreboard {
