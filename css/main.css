@@ -208,9 +208,6 @@ header h1 {
   border-left: 1px solid #9B61B1
 }
 
-
-#overlay {
-  background: rgba(199, 170, 221, .7);
 }
 
 #player-select-btn:active,
@@ -232,9 +229,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   max-width: 100%;
-  margin-top: 60px;
-}
-
 }
 
 #board {
