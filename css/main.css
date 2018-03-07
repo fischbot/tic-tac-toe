@@ -188,7 +188,8 @@ header h1 {
   justify-content: space-around;
   padding: 20px 30px;
   border-radius: 5px;
-  background: #5E5666;
+  /* background: #5E5666; */
+  background: #850cff;
   box-shadow: 1px 1px 3px #0B0313;
 }
 
