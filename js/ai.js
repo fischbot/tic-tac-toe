@@ -6,7 +6,7 @@ const ai = (() => {
   const findEmptySpaces = () => {
     possibleMoveLocations = [];
     game.board.forEach((tile, index) => {
-      if (game.board[index] === 0) {
+      if (tile === 0) {
         possibleMoveLocations.push(index);
       }
     });
