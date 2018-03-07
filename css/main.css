@@ -140,6 +140,9 @@ header h1 {
 
 #instructions {
   text-align: center;
+  font-size: 1.6em;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* ================================== Info ================================== */
