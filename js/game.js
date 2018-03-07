@@ -148,7 +148,7 @@ const game = (() => {
     isWon = false;
     isTied = false;
     display.clearBoard();
-    board = [0,0,0,0,0,0,0,0,0];
+    board.fill(0);
     display.playerTurnMessage(players[turn].name);
   };
 
