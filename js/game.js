@@ -105,8 +105,13 @@ const game = (() => {
   };
 
   const runAfterTurnChecksAndUpdateTurnMessage = () => {
-    checkForWin();
-    if (!isWon) {
+    let spacesTaken = tallySpacesTaken();
+
+    if (spacesTaken >= 3) {
+      checkForWin();
+    }
+
+    if (!isWon && spacesTaken === 9) {
       checkForTie();
     }
 
@@ -115,6 +120,16 @@ const game = (() => {
     }
     display.playerTurnMessage(players[turn].name);
   };
+
+  const tallySpacesTaken = () => {
+    let taken = 0;
+    board.forEach((tile, index) => {
+      if (tile !== 0) {
+        taken += 1;
+      }
+    });
+    return taken;
+  }
 
   const render = (tileClicked) => {
       if (board[tileClicked.id] === 0) {
