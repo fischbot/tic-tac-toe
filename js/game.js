@@ -186,6 +186,10 @@ const game = (() => {
     isTied = false;
     display.clearBoard();
     board.fill(0);
+    if (!settings.isTwoPlayers && turn === 1) {
+      computerTurn();
+    }
+
     display.playerTurnMessage(players[turn].name);
   };
 
