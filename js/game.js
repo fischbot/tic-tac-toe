@@ -94,13 +94,10 @@ const game = (() => {
     inputs.forEach((name, index) => createPlayer(name.value, index));
 
     if (players.length === 1) {
-      // create computer player
-      // players.push(computerPlayer());
       createPlayer("CPU", 1);
-      // toggle.visibility("difficulty-select"); // show
-    // } else {
-      start();
+      players[1].type = "cpu";
     }
+    start();
   };
 
   const isSpaceTaken = (element) => {
@@ -128,20 +125,13 @@ const game = (() => {
       }
 
       // Computer's turn if computer player exists
-      if (turn === 1 && players[1].name === "CPU") {
+      if (turn === 1 && players[1].type === "cpu") {
           window.setTimeout(() => {
             ai.render();
-            checkForWin();
-            if (!isWon) {
-              checkForTie();
-            }
+            runAfterTurnChecksAndUpdateTurnMessage();
 
-            if (!isTied) {
-              updateTurn();
-            }
-            display.playerTurnMessage(players[turn].name);
             toggle.visibility("disable-click"); // hide
-          }, 2000);
+          }, 600);
           toggle.visibility("disable-click"); // show
       }
   };
