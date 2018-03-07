@@ -127,7 +127,6 @@ button:focus {
 
 /* ================================= HEADER ================================= */
 header {
-  /* background: #52186B; */
   background: rgba(82, 24, 107, 0.8);
 }
 
@@ -177,7 +176,6 @@ header h1 {
   text-align: center;
   font-size: 2em;
   letter-spacing: 1px;
-  border: 1px solid red;
   margin: 0;
 }
 
@@ -329,7 +327,6 @@ main {
 footer {
   text-align: center;
   padding: 20px 0;
-  /* background: #290E47; */
   background: rgba(41, 14, 71, 0.8);
 }
 
