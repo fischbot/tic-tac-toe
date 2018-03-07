@@ -196,7 +196,8 @@ header h1 {
 .player-select-btn,
 #difficulty-select-btn,
 #name-input-submit-btn,
-#play-again-btn {
+#play-again-btn,
+#reset-btn {
   align-self: center;
   background: #C7AADD;
   color: #241F29;
@@ -213,7 +214,8 @@ header h1 {
 .player-select-btn:hover,
 #difficulty-select-btn:hover,
 #name-input-submit-btn:hover,
-#play-again-btn:hover {
+#play-again-btn:hover,
+#reset-btn:hover {
   background: #A18BB7;
   color: #fff;
 }
@@ -221,13 +223,23 @@ header h1 {
 #player-select-btn:active,
 #difficulty-select-btn:active,
 #name-input-submit-btn:active,
-#play-again-btn:active {
+#play-again-btn:active,
+#reset-btn:active {
 	transform: translateY(2px);
   box-shadow: 1px 1px 3px #222;
 }
 
+#reset-btn {
+  margin-top: 30px;
+  /* margin-left: 60px; */
+}
+
 #name-input input {
   margin: 10px;
+}
+
+#name-input-submit-btn {
+  order: 99;
 }
 
 /* ================================== Main ================================== */
