@@ -168,8 +168,9 @@ header h1 {
 
 #winner-message {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.8em;
   letter-spacing: 1px;
+  margin: 0 0 10px 0;
 }
 
 #player-turn-message {
