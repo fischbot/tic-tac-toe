@@ -5,6 +5,7 @@ const handlers = (() => {
       // ===== Player Select Buttons =================================
       case "two-players" :
         game.settings.numOfPlayers = 2;
+        game.settings.isTwoPlayers = true;
       case "one-player" :
         display.nameInputs(game.settings.numOfPlayers);
         toggle.visibility("player-select");   // hide

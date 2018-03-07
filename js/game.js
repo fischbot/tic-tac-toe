@@ -4,13 +4,13 @@ const game = (() => {
                 0,0,0,
                 0,0,0
               ];
-
   let players = [];
   let turn = 0;
   let isWon = false;
   let isTied = false;
   let settings = {
     difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
+    isTwoPlayers : false,
     numOfPlayers : 1
   };
 
@@ -20,7 +20,6 @@ const game = (() => {
       // index 2 = how many tiles to add
       [0,2,1],[3,5,1],[6,8,1],[0,6,3],[1,7,3],[2,8,3],[0,8,4],[2,6,2]
     ];
-    let isRoundOver = false;
     let total = 0;
     let xWinTotal = 3;
     let oWinTotal = 300;
@@ -137,26 +136,34 @@ const game = (() => {
     return taken;
   }
 
-  const render = (tileClicked) => {
-      if (board[tileClicked.id] === 0) {
-        board[tileClicked.id] = players[turn].playerMark;
-        elements.setText(tileClicked, players[turn].playerMark);
   const update = (tileClicked) => {
 
-        runAfterTurnChecksAndUpdateTurnMessage();
-      }
+    if (board[tileClicked.id] === 0) {
+      board[tileClicked.id] = players[turn].playerMark;
+      elements.setText(tileClicked, players[turn].playerMark);
 
-      // Computer's turn if computer player exists
-      if (turn === 1 && players[1].type === "cpu") {
-          window.setTimeout(() => {
-            ai.render();
-            runAfterTurnChecksAndUpdateTurnMessage();
+      runAfterTurnChecksAndUpdateTurnMessage();
+    }
 
-            toggle.visibility("disable-click"); // hide
-          }, 600);
-          toggle.visibility("disable-click"); // show
-      }
+    if (!isWon && !isTied && !settings.isTwoPlayers && turn === 1) {
+      computerTurn();
+    }
   };
+
+  const playerTurn = () => {
+
+  };
+
+  const computerTurn = () => {
+  window.setTimeout(() => {
+    ai.update();
+    runAfterTurnChecksAndUpdateTurnMessage();
+
+    toggle.visibility("disable-click"); // hide
+  }, 600);
+  toggle.visibility("disable-click"); // show
+
+};
 
   const reset = () => {
     // TODO
