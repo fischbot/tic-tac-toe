@@ -178,15 +178,15 @@ const game = (() => {
   };
 
   const debug = () => {
-    players.forEach((player, index) => {
-      console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
-    });
-    console.table(board);
-    console.log(`difficulty: ${settings.difficulty};`);
-    console.log(`number of players: ${settings.numOfPlayers};`);
-    console.log(`turn: ${turn}`);
-    console.log(`isWon: ${isWon}`);
+    // players.forEach((player, index) => {
+    //   console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
+    // });
+    console.log(board);
+    // console.log(`difficulty: ${settings.difficulty};`);
+    // console.log(`number of players: ${settings.numOfPlayers};`);
+    // console.log(`turn: ${turn}`);
+    // console.log(`isWon: ${isWon}`);
   }
 
-  return { reset, start, init, debug, render, settings, isSpaceTaken, getPlayers, nextRound };
+  return { reset, start, init, debug, render, settings, isSpaceTaken, getPlayers, nextRound, board, players };
 })();
