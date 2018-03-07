@@ -24,6 +24,7 @@ const game = (() => {
     let total = 0;
     let xWinTotal = 3;
     let oWinTotal = 300;
+    let adjacentTilesDontMatch = 101;
     for (let set = 0; set < boardStartAndEndPoints.length; set++) {
       let addTiles = boardStartAndEndPoints[set][2];
       let start = boardStartAndEndPoints[set][0];
@@ -36,7 +37,7 @@ const game = (() => {
           total += 100;
         }
 
-        if (total === 101) {
+        if (total === adjacentTilesDontMatch) {
           // skip to the next set
           break;
         }
