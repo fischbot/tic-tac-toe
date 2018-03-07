@@ -33,13 +33,13 @@ const handlers = (() => {
         break
 
       // ===== Difficulty Select Buttons =============================
-      case "hard" :
-        game.settings.difficulty = 3;
-      case "normal" :
-        game.start();
-        toggle.visibility("difficulty-select"); // hide
-
-        break;
+      // case "hard" :
+      //   game.settings.difficulty = 3;
+      // case "normal" :
+      //   game.start();
+      //   toggle.visibility("difficulty-select"); // hide
+      //
+      //   break;
 
       case "play-again-btn" :
         game.nextRound();
