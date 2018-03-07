@@ -107,19 +107,24 @@ const game = (() => {
     return element.classList.contains("space-taken");
   };
 
+  const runAfterTurnChecksAndUpdateTurnMessage = () => {
+    checkForWin();
+    if (!isWon) {
+      checkForTie();
+    }
+
+    if (!isTied) {
+      updateTurn();
+    }
+    display.playerTurnMessage(players[turn].name);
+  };
+
   const render = (tileClicked) => {
       if (board[tileClicked.id] === 0) {
         board[tileClicked.id] = players[turn].playerMark;
         elements.setText(tileClicked, players[turn].playerMark);
-        checkForWin();
-        if (!isWon) {
-          checkForTie();
-        }
 
-        if (!isTied) {
-          updateTurn();
-        }
-        display.playerTurnMessage(players[turn].name);
+        runAfterTurnChecksAndUpdateTurnMessage();
       }
 
       // Computer's turn if computer player exists
