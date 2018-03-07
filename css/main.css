@@ -191,8 +191,8 @@ header h1 {
   box-shadow: 1px 1px 3px #0B0313;
 }
 
-#player-select button,
-#difficulty-select button,
+.player-select-btn,
+#difficulty-select-btn,
 #name-input-submit-btn,
 #play-again-btn {
   align-self: center;
@@ -213,8 +213,8 @@ header h1 {
   background: rgba(199, 170, 221, .7);
 }
 
-#player-select button:active,
-#difficulty-select button:active,
+#player-select-btn:active,
+#difficulty-select-btn:active,
 #name-input-submit-btn:active,
 #play-again-btn:active {
 	transform: translateY(2px);
