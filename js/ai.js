@@ -61,6 +61,7 @@ const ai = (() => {
       index = randomizer(game.board.length);
     }
     let tile = document.getElementById(`${index}`);
+    game.board[index] = game.players[1].playerMark;
     elements.setText(tile, game.players[1].playerMark);
   };
 
