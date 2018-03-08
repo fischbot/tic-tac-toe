@@ -5,20 +5,8 @@ const player = (name, index) => {
   let marks = ['X', 'O'];
   let score = 0;
   let playerMark = marks[index];
-  let type = "human";
-  return { name, score, playerMark, type };
+  return { name, score, playerMark };
 };
-
-// ==================== Computer Player =======================================
-// TODO
-const computerPlayer = () => {
-  // TODO difficulty level
-  // TODO logic for each difficulty level
-  const name = "CPU";
-  const playerMark = 'O';
-  const score = 0;
-  return { name, playerMark, score };
-}
 
 // ==================== Display ===============================================
 

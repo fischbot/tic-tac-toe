@@ -81,13 +81,11 @@ const game = (() => {
   };
 
   const gameOver = (msg) => {
-    toggle.visibility("overlay");   // show
-    display.winnerMessage(msg);
-    toggle.visibility("game-over"); // show
+    toggle.visibility("overlay");             // show
+    toggle.visibility("game-over");           // show
     toggle.visibility("player-turn-message"); // hide
-    if (isWon) {
-      updateWinnerScore();
-    }
+    display.winnerMessage(msg);
+    if (isWon) updateWinnerScore();
   };
 
   const getPlayers = () => {
@@ -100,7 +98,6 @@ const game = (() => {
 
     if (players.length === 1) {
       createPlayer("CPU", 1);
-      players[1].type = "cpu";
     }
     start();
   };
@@ -150,10 +147,6 @@ const game = (() => {
     }
   };
 
-  const playerTurn = () => {
-
-  };
-
   const computerTurn = () => {
   window.setTimeout(() => {
     ai.update();
@@ -194,21 +187,12 @@ const game = (() => {
   };
 
   const start = () => {
-    toggle.visibility("board");       // show
+    toggle.visibility("board");               // show
     toggle.visibility("right-side-content");  // show
-    display.initializeScoreboard();
     toggle.visibility("player-turn-message"); // show
+    display.initializeScoreboard();
     display.playerTurnMessage(players[turn].name);
   };
-
-  const swapPlayerMarks = () => {
-    // unused for now, but could be used in future functionality to give
-    // players the option of which mark they want
-    let temp = players[0].playerMark;
-    players[0].playerMark = players[1].playerMark;
-    players[1].playerMark = temp;
-  };
-
 
   const updateTurn = () => {
     if (turn === 0) {
@@ -218,16 +202,5 @@ const game = (() => {
     }
   };
 
-  const debug = () => {
-    // players.forEach((player, index) => {
-    //   console.log('player ' + (parseInt([index]) + 1) + ': ' + player.name + ': ' + player.playerMark);
-    // });
-    // console.log(board);
-    console.log(`two players? : ${settings.isTwoPlayers}`);
-    // console.log(`number of players: ${settings.numOfPlayers};`);
-    console.log(`turn: ${turn}`);
-    // console.log(`isWon: ${isWon}`);
-  }
-
-  return { reset, start, playerSetup, debug, update, settings, isSpaceTaken, getPlayers, nextRound, board, players };
+  return { reset, start, playerSetup, update, settings, isSpaceTaken, getPlayers, nextRound, board, players };
 })();
