@@ -8,17 +8,6 @@ const player = (name, index) => {
   return { name, score, playerMark };
 };
 
-// ==================== Computer Player =======================================
-// TODO
-const computerPlayer = () => {
-  // TODO difficulty level
-  // TODO logic for each difficulty level
-  const name = "CPU";
-  const playerMark = 'O';
-  const score = 0;
-  return { name, playerMark, score };
-}
-
 // ==================== Display ===============================================
 
 const display = (() => {
