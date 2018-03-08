@@ -43,6 +43,19 @@ const ai = (() => {
     return Math.floor(Math.random() * multiplier);
   };
 
+  const getTilesOccupiedByCpu = () => {
+    if (tilesOccupiedByCpu.length !== 0) {
+      // clear values
+      tilesOccupiedByCpu = [];
+    }
+
+    game.board.forEach((tile, index) => {
+      if (tile === "O") {
+        tilesOccupiedByCpu.push(index);
+      }
+    });
+  };
+
   const planNextMove = () => {
     getTilesOccupiedByCpu();
     let move = {};
