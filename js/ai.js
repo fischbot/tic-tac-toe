@@ -66,6 +66,7 @@ const ai = (() => {
   };
 
   const findPossibleMoveLocations = () => {
+    findEmptySpaces();
     getTilesOccupiedByCpu();
     let move = {};
     let possibleMoves = [];
