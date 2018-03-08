@@ -43,10 +43,41 @@ const ai = (() => {
     return Math.floor(Math.random() * multiplier);
   };
 
+  const planNextMove = () => {
+    getTilesOccupiedByCpu();
+    let move = {};
+    let possibleMoves = [];
+    if (tilesOccupiedByCpu.length !== 0) {
+      tilesOccupiedByCpu.forEach((tile) => {
+        // check empty Tiles that are next to each "O"
+        move.left = checkLeft();
+        move.right = checkRight();
+        move.up = checkUp();
+        move.down = checkDown();
+        move.upDiagonal = checkUpDiagonal();
+        move.downDiagonal = checkDownDiagonal();
+
+        if (move.left) {
+          possibleMoves.push()
+        }
+      });
+    }
+
+
+
+
+    // tilesOccupiedByCpu.forEach((occupiedByCpu, occupiedIndex) => {
+    //   if (occupiedByCpu) {
+    //
+    //   }
+    // });
+    // console.log(tilesOccupiedByCpu);
+  };
+
   const update = () => {
     findEmptySpaces();
     let index;
-    while (!possibleMoveLocations.includes(index)) {
+    while (!emptyTiles.includes(index)) {
       index = randomizer(game.board.length);
     }
     let tile = document.getElementById(`${index}`);
