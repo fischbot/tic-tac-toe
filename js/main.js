@@ -5,8 +5,7 @@ const player = (name, index) => {
   let marks = ['X', 'O'];
   let score = 0;
   let playerMark = marks[index];
-  let type = "human";
-  return { name, score, playerMark, type };
+  return { name, score, playerMark };
 };
 
 // ==================== Computer Player =======================================

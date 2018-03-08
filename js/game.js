@@ -98,7 +98,6 @@ const game = (() => {
 
     if (players.length === 1) {
       createPlayer("CPU", 1);
-      players[1].type = "cpu";
     }
     start();
   };
