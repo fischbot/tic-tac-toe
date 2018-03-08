@@ -82,7 +82,7 @@ const ai = (() => {
     });
   };
 
-  const planNextMove = () => {
+  const findPossibleMoveLocations = () => {
     getTilesOccupiedByCpu();
     let move = {};
     let possibleMoves = [];
