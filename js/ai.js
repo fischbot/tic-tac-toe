@@ -77,6 +77,14 @@ const ai = (() => {
       });
 
 
+  const runChecks = (possibleMoves, tile) => {
+    checkLeft(possibleMoves, tile);
+    checkRight(possibleMoves, tile);
+    checkUp(possibleMoves, tile);
+    checkDown(possibleMoves, tile);
+    checkUpDiagonal(possibleMoves, tile);
+    checkDownDiagonal(possibleMoves, tile);
+  };
 
 
     // tilesOccupiedByCpu.forEach((occupiedByCpu, occupiedIndex) => {
