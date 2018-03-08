@@ -81,13 +81,11 @@ const game = (() => {
   };
 
   const gameOver = (msg) => {
-    toggle.visibility("overlay");   // show
-    display.winnerMessage(msg);
-    toggle.visibility("game-over"); // show
+    toggle.visibility("overlay");             // show
+    toggle.visibility("game-over");           // show
     toggle.visibility("player-turn-message"); // hide
-    if (isWon) {
-      updateWinnerScore();
-    }
+    display.winnerMessage(msg);
+    if (isWon) updateWinnerScore();
   };
 
   const getPlayers = () => {
@@ -150,10 +148,6 @@ const game = (() => {
     }
   };
 
-  const playerTurn = () => {
-
-  };
-
   const computerTurn = () => {
   window.setTimeout(() => {
     ai.update();
@@ -194,10 +188,10 @@ const game = (() => {
   };
 
   const start = () => {
-    toggle.visibility("board");       // show
+    toggle.visibility("board");               // show
     toggle.visibility("right-side-content");  // show
-    display.initializeScoreboard();
     toggle.visibility("player-turn-message"); // show
+    display.initializeScoreboard();
     display.playerTurnMessage(players[turn].name);
   };
 
