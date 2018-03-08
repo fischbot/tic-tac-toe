@@ -1,13 +1,13 @@
 // ==================== AI ====================================================
 // TODO
 const ai = (() => {
+  let emptyTiles = [];
   let tilesOccupiedByCpu = [];
-  let possibleMoveLocations = [];
   const findEmptySpaces = () => {
-    possibleMoveLocations = [];
+    emptyTiles = [];
     game.board.forEach((tile, index) => {
       if (tile === 0) {
-        possibleMoveLocations.push(index);
+        emptyTiles.push(index);
       }
     });
   };
@@ -46,7 +46,7 @@ const ai = (() => {
   const update = () => {
     findEmptySpaces();
     let index;
-    while (!possibleMoveLocations.includes(index)) {
+    while (!emptyTiles.includes(index)) {
       index = randomizer(game.board.length);
     }
     let tile = document.getElementById(`${index}`);
