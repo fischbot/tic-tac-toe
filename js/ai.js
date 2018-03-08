@@ -5,9 +5,7 @@ const ai = (() => {
   const findEmptySpaces = () => {
     emptyTiles = []; // reset
     game.board.forEach((tile, index) => {
-      if (tile === 0) {
-        emptyTiles.push(index);
-      }
+      if (tile === 0) emptyTiles.push(index);
     });
   };
 
