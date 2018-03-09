@@ -182,5 +182,13 @@ const game = (() => {
     }
   };
 
-  return { reset, start, playerSetup, update, settings, isSpaceTaken, getPlayers, nextRound, board, players };
+  return {
+          reset,
+          playerSetup,
+          update,
+          settings,
+          getPlayers,
+          nextRound,
+          players
+        };
 })();
