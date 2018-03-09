@@ -24,9 +24,9 @@ const game = (() => {
       let end = boardStartAndEndPoints[set][1];
 
       for (let i = start; i <= end; i+= addTiles) {
-        if (board[i] === 'X') {
+        if (gameboard.board[i] === 'X') {
           total += 1;
-        } else if (board[i] === 'O') {
+        } else if (gameboard.board[i] === 'O') {
           total += 100;
         }
 
@@ -48,7 +48,7 @@ const game = (() => {
 
   const checkForTie = () => {
     let tileCount = 0;
-    board.forEach( (tile) => {
+    gameboard.board.forEach( (tile) => {
       if (tile === 0) {
         return
       } else {
@@ -97,7 +97,7 @@ const game = (() => {
   };
 
   const runAfterTurnChecksAndUpdateTurnMessage = () => {
-    let spacesTaken = tallySpacesTaken();
+    let spacesTaken = gameboard.tallySpacesTaken();
 
     if (spacesTaken >= 3) {
       checkForWin();
@@ -115,8 +115,8 @@ const game = (() => {
 
   const update = (tileClicked) => {
 
-    if (board[tileClicked.id] === 0) {
-      board[tileClicked.id] = players[turn].playerMark;
+    if (gameboard.board[tileClicked.id] === 0) {
+      gameboard.board[tileClicked.id] = players[turn].playerMark;
       elements.setText(tileClicked, players[turn].playerMark);
 
       runAfterTurnChecksAndUpdateTurnMessage();
@@ -145,7 +145,7 @@ const game = (() => {
     turn = 0;
     isWon = false;
     isTied = false;
-    board.fill(0);
+    gameboard.board.fill(0);
     toggle.visibility("player-select"); // show
     toggle.visibility("board"); // hide
     toggle.visibility("right-side-content"); // hide
@@ -158,7 +158,7 @@ const game = (() => {
     isWon = false;
     isTied = false;
     display.clearBoard();
-    board.fill(0);
+    gameboard.board.fill(0);
     if (!settings.isTwoPlayers && turn === 1) {
       computerTurn();
     }

@@ -40,7 +40,7 @@ const handlers = (() => {
 
     // ===== Tiles ===================================================
     if (elementClicked.classList.contains("tile")) {
-      if (!game.isSpaceTaken(elementClicked)) {
+      if (!gameboard.isSpaceTaken(elementClicked)) {
         game.update(elementClicked);
         elementClicked.classList.add("space-taken");
       }
