@@ -1,12 +1,4 @@
 const elements = (() => {
-  const retrieve = (classIdOrTag) => {
-    if (classIdOrTag[0] === '#') {
-      return document.getElementById(`${classIdOrTag}`);
-    } else {
-      return document.querySelectorAll(`${classIdOrTag}`);
-    }
-  };
-
   const create = (elementType, classNameOrId) => {
     let element = document.createElement(`${elementType}`);
     let value;
