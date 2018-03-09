@@ -16,10 +16,18 @@ const handlers = (() => {
       case "two-players" :
         game.settings.numOfPlayers = 2;
         game.settings.isTwoPlayers = true;
-      case "one-player" :
+        /* ============== DELETE THIS WHEN SINGLE PLAYER IS RESTORED ======= */
         display.nameInputs(game.settings.numOfPlayers);
         elements.toggle.visibility("player-select");   // hide
         elements.toggle.visibility("name-input");      // show
+        break;
+        /* === ^^^^^^^ DELETE THIS WHEN SINGLE PLAYER IS RESTORED ^^^^^^^ == */
+      case "one-player" :
+        // UNCOMMENT THESE WHEN SINGLE PLAYER IS RESTORED
+        // display.nameInputs(game.settings.numOfPlayers);
+        // elements.toggle.visibility("player-select");   // hide
+        // elements.toggle.visibility("name-input");      // show
+        alert("Single Player vs. Computer Coming Soon!");
         break;
       // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :

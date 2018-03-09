@@ -11,41 +11,22 @@ const game = (() => {
   };
 
   const checkForWin = () => {
-    let boardStartAndEndPoints = [
-      // index 0 = start location, index 1 = end location,
-      // index 2 = how many tiles to add
-      [0,2,1],[3,5,1],[6,8,1],[0,6,3],[1,7,3],[2,8,3],[0,8,4],[2,6,2]
-    ];
-    let total = 0;
-    let xWinTotal = 3;
-    let oWinTotal = 300;
-    let adjacentTilesDontMatch = 101;
-    for (let set = 0; set < boardStartAndEndPoints.length; set++) {
-      let addTiles = boardStartAndEndPoints[set][2];
-      let start = boardStartAndEndPoints[set][0];
-      let end = boardStartAndEndPoints[set][1];
-
-      for (let i = start; i <= end; i+= addTiles) {
-        if (gameboard.board[i] === 'X') {
+    const winConditions = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],
+                           [2,5,8],[0,4,8],[2,4,6]];
+    winConditions.forEach((set, index) => {
+      let total = 0;
+      set.forEach((tile) => {
+        if (gameboard.board[tile] === "X") {
           total += 1;
-        } else if (gameboard.board[i] === 'O') {
-          total += 100;
+        } else if (gameboard.board[tile] === "O") {
+          total += 100
         }
-
-        if (total === adjacentTilesDontMatch) {
-          // skip to the next set
-          break;
-        }
-      }
-
-      if (total === xWinTotal || total === oWinTotal) {
+      });
+      if (total === 3 || total === 300) {
         isWon = true;
         gameOver(`${players[turn].name} wins!`);
-        break;
-      } else {
-        total = 0;
       }
-    }
+    });
   };
 
   const checkForTie = () => {
@@ -190,6 +171,6 @@ const game = (() => {
           settings,
           getPlayers,
           nextRound,
-          players
+          players,
         };
 })();

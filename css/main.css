@@ -230,6 +230,15 @@ header h1 {
   box-shadow: 1px 1px 3px #222;
 }
 
+/* ============== DELETE THIS WHEN SINGLE PLAYER IS RESTORED ============== */
+#one-player,
+#one-player:hover {
+  background: rgba(199, 170, 221, .7);
+  color: #222;
+  border-bottom: 1px solid #1C0534;
+}
+/* ===== ^^^^^^^ DELETE THIS WHEN SINGLE PLAYER IS RESTORED ^^^^^^^ ========= */
+
 #reset-btn {
   margin-top: 30px;
   /* margin-left: 60px; */
@@ -242,6 +251,7 @@ header h1 {
 #name-input-submit-btn {
   order: 99;
 }
+
 
 /* ================================== Main ================================== */
 main {
