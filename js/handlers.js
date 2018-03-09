@@ -46,8 +46,6 @@ const handlers = (() => {
         game.update(elementClicked);
         elementClicked.classList.add("space-taken");
       }
-    } else if (elementClicked.classList.contains("debug")) {
-      game.debug();
     }
   };
 
