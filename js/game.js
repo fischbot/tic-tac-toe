@@ -113,16 +113,6 @@ const game = (() => {
     display.playerTurnMessage(players[turn].name);
   };
 
-  const tallySpacesTaken = () => {
-    let taken = 0;
-    board.forEach((tile, index) => {
-      if (tile !== 0) {
-        taken += 1;
-      }
-    });
-    return taken;
-  }
-
   const update = (tileClicked) => {
 
     if (board[tileClicked.id] === 0) {
