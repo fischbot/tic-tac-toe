@@ -1,5 +1,5 @@
-// ==================== AI ====================================================
-// TODO
+"use strict";
+
 const ai = (() => {
   let emptyTiles = [];
   const findEmptySpaces = () => {

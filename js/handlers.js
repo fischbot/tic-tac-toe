@@ -1,3 +1,5 @@
+"use strict";
+
 const handlers = (() => {
   const clickHandler = (e) => {
     const elementClicked = e.target;

@@ -1,3 +1,5 @@
+"use strict";
+
 const elements = (() => {
   const create = (elementType, classNameOrId) => {
     let element = document.createElement(`${elementType}`);

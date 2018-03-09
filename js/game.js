@@ -1,3 +1,5 @@
+"use strict";
+
 const game = (() => {
   let players = [];
   let turn = 0;
