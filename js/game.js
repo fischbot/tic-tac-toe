@@ -96,10 +96,6 @@ const game = (() => {
     start();
   };
 
-  const isSpaceTaken = (element) => {
-    return element.classList.contains("space-taken");
-  };
-
   const runAfterTurnChecksAndUpdateTurnMessage = () => {
     let spacesTaken = tallySpacesTaken();
 
