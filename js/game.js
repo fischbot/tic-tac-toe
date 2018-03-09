@@ -9,7 +9,6 @@ const game = (() => {
   let isWon = false;
   let isTied = false;
   let settings = {
-    difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
     isTwoPlayers : false,
     numOfPlayers : 1
   };

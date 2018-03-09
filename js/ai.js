@@ -118,9 +118,5 @@ const ai = (() => {
     elements.setText(tile, game.players[1].playerMark);
   };
 
-  const difficulty = () => {
-    // TODO
-  };
-
   return { update, findPossibleMoveLocations };
 })();
