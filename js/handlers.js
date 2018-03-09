@@ -47,15 +47,13 @@ const handlers = (() => {
         elements.toggle.visibility("game-over");
         break;
     }
-
-    // ===== Tiles ===================================================
-    if (elementClicked.classList.contains("tile")) {
-      if (!gameboard.isSpaceTaken(elementClicked)) {
-        game.update(elementClicked);
-        elementClicked.classList.add("space-taken");
-      }
-    }
   };
 
+  const tileHandler = (elementClicked) => {
+    if (!gameboard.isSpaceTaken(elementClicked)) {
+      game.update(elementClicked);
+      elementClicked.classList.add("space-taken");
+    }
+  };
   return { clickHandler };
 })();
