@@ -13,7 +13,7 @@ const handlers = (() => {
         break;
       // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :
-        let inputs = Array.prototype.slice.call(elements.retrieve("input")); // convert from nodelist to array
+        let inputs = Array.prototype.slice.call(document.querySelectorAll("input")); // convert from nodelist to array
         let missingCount = 0;
         // check all inputs for values
         inputs.forEach((input, index) => {
