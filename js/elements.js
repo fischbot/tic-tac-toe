@@ -16,12 +16,10 @@ const elements = (() => {
   };
 
   const append = (parentIdTagOrClassName, child) => {
+    // not entirely necessary but I think it makes the functions \
+    // using it look neater
     let parent = document.querySelector(`${parentIdTagOrClassName}`);
-    if (parent !== null) {
-      parent.appendChild(child);
-    } else {
-      console.error(`Cannot append ${child} to ${parent}`);
-    }
+    parent.appendChild(child);
   };
 
   const isMissingValue = (input) => {
