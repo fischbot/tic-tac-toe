@@ -31,5 +31,25 @@ const elements = (() => {
   const setText = (elementId, text) => {
     elementId.innerText = text;
   };
-  return { retrieve, create, append, isMissingValue, setText };
+
+  const toggle = (() => {
+    const visibility = (id) => {
+      const element = document.getElementById(`${id}`);
+      if (element.classList.contains("hidden")) {
+        element.classList.remove("hidden");
+      } else {
+        element.classList.add("hidden");
+      }
+    }
+
+    return { visibility };
+  })();
+
+  return {
+          create,
+          append,
+          isMissingValue,
+          setText,
+          toggle
+        };
 })();
