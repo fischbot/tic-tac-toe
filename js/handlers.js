@@ -8,8 +8,8 @@ const handlers = (() => {
         game.settings.isTwoPlayers = true;
       case "one-player" :
         display.nameInputs(game.settings.numOfPlayers);
-        toggle.visibility("player-select");   // hide
-        toggle.visibility("name-input");      // show
+        elements.toggle.visibility("player-select");   // hide
+        elements.toggle.visibility("name-input");      // show
         break;
       // ===== Name Input Buttons ====================================
       case "name-input-submit-btn" :
@@ -25,7 +25,7 @@ const handlers = (() => {
         if (missingCount === 0) {
           // all inputs have values
           game.playerSetup(inputs);
-          toggle.visibility("name-input");      // hide
+          elements.toggle.visibility("name-input");      // hide
         }
         break;
       case "reset-btn" :
@@ -34,7 +34,7 @@ const handlers = (() => {
 
       case "play-again-btn" :
         game.nextRound();
-        toggle.visibility("game-over");
+        elements.toggle.visibility("game-over");
         break;
     }
 

@@ -75,9 +75,9 @@ const game = (() => {
   };
 
   const gameOver = (msg) => {
-    toggle.visibility("overlay");             // show
-    toggle.visibility("game-over");           // show
-    toggle.visibility("player-turn-message"); // hide
+    elements.toggle.visibility("overlay");             // show
+    elements.toggle.visibility("game-over");           // show
+    elements.toggle.visibility("player-turn-message"); // hide
     display.winnerMessage(msg);
     if (isWon) updateWinnerScore();
   };
@@ -132,9 +132,9 @@ const game = (() => {
       ai.update();
       runAfterTurnChecksAndUpdateTurnMessage();
 
-      toggle.visibility("disable-click"); // hide
+      elements.toggle.visibility("disable-click"); // hide
     }, 600);
-    toggle.visibility("disable-click"); // show
+    elements.toggle.visibility("disable-click"); // show
   }
 
   const reset = () => {
@@ -145,15 +145,15 @@ const game = (() => {
     isWon = false;
     isTied = false;
     gameboard.board.fill(0);
-    toggle.visibility("player-select"); // show
-    toggle.visibility("board"); // hide
-    toggle.visibility("right-side-content"); // hide
-    toggle.visibility("player-turn-message"); // hide
+    elements.toggle.visibility("player-select"); // show
+    elements.toggle.visibility("board"); // hide
+    elements.toggle.visibility("right-side-content"); // hide
+    elements.toggle.visibility("player-turn-message"); // hide
   };
 
   const nextRound = () => {
-    toggle.visibility("overlay"); // hide
-    toggle.visibility("player-turn-message"); // show
+    elements.toggle.visibility("overlay"); // hide
+    elements.toggle.visibility("player-turn-message"); // show
     isWon = false;
     isTied = false;
     display.clearBoard();
@@ -166,9 +166,9 @@ const game = (() => {
   };
 
   const start = () => {
-    toggle.visibility("board");               // show
-    toggle.visibility("right-side-content");  // show
-    toggle.visibility("player-turn-message"); // show
+    elements.toggle.visibility("board");               // show
+    elements.toggle.visibility("right-side-content");  // show
+    elements.toggle.visibility("player-turn-message"); // show
     display.initializeScoreboard();
     display.playerTurnMessage(players[turn].name);
   };
