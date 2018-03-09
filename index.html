@@ -43,11 +43,6 @@
                 <div id="name-input" class="hidden">
                   <button id="name-input-submit-btn">Enter</button>
                 </div>
-                <div id="difficulty-select" class="hidden">
-                  <h3>Select Difficulty:</h3>
-                  <button class="difficulty-btn" id="normal">Normal</button>
-                  <button class="difficulty-btn" id="hard">Hard</button>
-                </div>
                 <h3 id="player-turn-message" class="hidden"></h3>
                 <div id="game-over" class="hidden">
                   <p id="winner-message"></p>
@@ -91,7 +86,10 @@
         <script src="js/vendor/LAB.min.js"></script>
         <script>
           $LAB.script("js/elements.js").wait()
+          .script("js/display.js").wait()
+          .script("js/player.js").wait()
           .script("js/ai.js").wait()
+          .script("js/gameboard.js").wait()
           .script("js/game.js").wait()
           .script("js/handlers.js").wait()
           .script("js/main.js").wait(function() {

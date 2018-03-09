@@ -1,15 +1,11 @@
+"use strict";
+
 const game = (() => {
-  let board = [
-                0,0,0,
-                0,0,0,
-                0,0,0
-              ];
   let players = [];
   let turn = 0;
   let isWon = false;
   let isTied = false;
   let settings = {
-    difficulty : 1, // 1 = normal, 3 = hard TODO use as multiplier for AI randomizer
     isTwoPlayers : false,
     numOfPlayers : 1
   };
@@ -30,9 +26,9 @@ const game = (() => {
       let end = boardStartAndEndPoints[set][1];
 
       for (let i = start; i <= end; i+= addTiles) {
-        if (board[i] === 'X') {
+        if (gameboard.board[i] === 'X') {
           total += 1;
-        } else if (board[i] === 'O') {
+        } else if (gameboard.board[i] === 'O') {
           total += 100;
         }
 
@@ -54,7 +50,7 @@ const game = (() => {
 
   const checkForTie = () => {
     let tileCount = 0;
-    board.forEach( (tile) => {
+    gameboard.board.forEach( (tile) => {
       if (tile === 0) {
         return
       } else {
@@ -81,9 +77,9 @@ const game = (() => {
   };
 
   const gameOver = (msg) => {
-    toggle.visibility("overlay");             // show
-    toggle.visibility("game-over");           // show
-    toggle.visibility("player-turn-message"); // hide
+    elements.toggle.visibility("overlay");             // show
+    elements.toggle.visibility("game-over");           // show
+    elements.toggle.visibility("player-turn-message"); // hide
     display.winnerMessage(msg);
     if (isWon) updateWinnerScore();
   };
@@ -102,12 +98,8 @@ const game = (() => {
     start();
   };
 
-  const isSpaceTaken = (element) => {
-    return element.classList.contains("space-taken");
-  };
-
   const runAfterTurnChecksAndUpdateTurnMessage = () => {
-    let spacesTaken = tallySpacesTaken();
+    let spacesTaken = gameboard.tallySpacesTaken();
 
     if (spacesTaken >= 3) {
       checkForWin();
@@ -123,20 +115,10 @@ const game = (() => {
     display.playerTurnMessage(players[turn].name);
   };
 
-  const tallySpacesTaken = () => {
-    let taken = 0;
-    board.forEach((tile, index) => {
-      if (tile !== 0) {
-        taken += 1;
-      }
-    });
-    return taken;
-  }
-
   const update = (tileClicked) => {
 
-    if (board[tileClicked.id] === 0) {
-      board[tileClicked.id] = players[turn].playerMark;
+    if (gameboard.board[tileClicked.id] === 0) {
+      gameboard.board[tileClicked.id] = players[turn].playerMark;
       elements.setText(tileClicked, players[turn].playerMark);
 
       runAfterTurnChecksAndUpdateTurnMessage();
@@ -148,15 +130,14 @@ const game = (() => {
   };
 
   const computerTurn = () => {
-  window.setTimeout(() => {
-    ai.update();
-    runAfterTurnChecksAndUpdateTurnMessage();
+    window.setTimeout(() => {
+      ai.update();
+      runAfterTurnChecksAndUpdateTurnMessage();
 
-    toggle.visibility("disable-click"); // hide
-  }, 600);
-  toggle.visibility("disable-click"); // show
-
-};
+      elements.toggle.visibility("disable-click"); // hide
+    }, 600);
+    elements.toggle.visibility("disable-click"); // show
+  }
 
   const reset = () => {
     settings.isTwoPlayers = false;
@@ -165,20 +146,20 @@ const game = (() => {
     turn = 0;
     isWon = false;
     isTied = false;
-    board.fill(0);
-    toggle.visibility("player-select"); // show
-    toggle.visibility("board"); // hide
-    toggle.visibility("right-side-content"); // hide
-    toggle.visibility("player-turn-message"); // hide
+    gameboard.board.fill(0);
+    elements.toggle.visibility("player-select"); // show
+    elements.toggle.visibility("board"); // hide
+    elements.toggle.visibility("right-side-content"); // hide
+    elements.toggle.visibility("player-turn-message"); // hide
   };
 
   const nextRound = () => {
-    toggle.visibility("overlay"); // hide
-    toggle.visibility("player-turn-message"); // show
+    elements.toggle.visibility("overlay"); // hide
+    elements.toggle.visibility("player-turn-message"); // show
     isWon = false;
     isTied = false;
     display.clearBoard();
-    board.fill(0);
+    gameboard.board.fill(0);
     if (!settings.isTwoPlayers && turn === 1) {
       computerTurn();
     }
@@ -187,9 +168,9 @@ const game = (() => {
   };
 
   const start = () => {
-    toggle.visibility("board");               // show
-    toggle.visibility("right-side-content");  // show
-    toggle.visibility("player-turn-message"); // show
+    elements.toggle.visibility("board");               // show
+    elements.toggle.visibility("right-side-content");  // show
+    elements.toggle.visibility("player-turn-message"); // show
     display.initializeScoreboard();
     display.playerTurnMessage(players[turn].name);
   };
@@ -202,5 +183,13 @@ const game = (() => {
     }
   };
 
-  return { reset, start, playerSetup, update, settings, isSpaceTaken, getPlayers, nextRound, board, players };
+  return {
+          reset,
+          playerSetup,
+          update,
+          settings,
+          getPlayers,
+          nextRound,
+          players
+        };
 })();

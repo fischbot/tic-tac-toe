@@ -1,10 +1,10 @@
-// ==================== AI ====================================================
-// TODO
+"use strict";
+
 const ai = (() => {
   let emptyTiles = [];
   const findEmptySpaces = () => {
     emptyTiles = []; // reset
-    game.board.forEach((tile, index) => {
+    gameboard.board.forEach((tile, index) => {
       if (tile === 0) emptyTiles.push(index);
     });
   };
@@ -52,7 +52,7 @@ const ai = (() => {
   const getTilesOccupiedByCpu = () => {
     let tilesOccupiedByCpu = [];
 
-    game.board.forEach((tile, index) => {
+    gameboard.board.forEach((tile, index) => {
       if (tile === "O") {
         tilesOccupiedByCpu.push(index);
       }
@@ -110,16 +110,12 @@ const ai = (() => {
     let index;
 
     while (!possibleMoveLocations.includes(index)) {
-      index = randomizer(game.board.length);
+      index = randomizer(gameboard.board.length);
     }
 
     let tile = document.getElementById(`${index}`);
-    game.board[index] = game.players[1].playerMark;
+    gameboard.board[index] = game.players[1].playerMark;
     elements.setText(tile, game.players[1].playerMark);
-  };
-
-  const difficulty = () => {
-    // TODO
   };
 
   return { update, findPossibleMoveLocations };
