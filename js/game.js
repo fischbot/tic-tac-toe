@@ -1,9 +1,4 @@
 const game = (() => {
-  let board = [
-                0,0,0,
-                0,0,0,
-                0,0,0
-              ];
   let players = [];
   let turn = 0;
   let isWon = false;
