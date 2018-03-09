@@ -128,15 +128,14 @@ const game = (() => {
   };
 
   const computerTurn = () => {
-  window.setTimeout(() => {
-    ai.update();
-    runAfterTurnChecksAndUpdateTurnMessage();
+    window.setTimeout(() => {
+      ai.update();
+      runAfterTurnChecksAndUpdateTurnMessage();
 
-    toggle.visibility("disable-click"); // hide
-  }, 600);
-  toggle.visibility("disable-click"); // show
-
-};
+      toggle.visibility("disable-click"); // hide
+    }, 600);
+    toggle.visibility("disable-click"); // show
+  }
 
   const reset = () => {
     settings.isTwoPlayers = false;
