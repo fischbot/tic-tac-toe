@@ -3,6 +3,14 @@
 const handlers = (() => {
   const clickHandler = (e) => {
     const elementClicked = e.target;
+    btnHandler(elementClicked);
+
+    if (elementClicked.classList.contains("tile")) {
+      tileHandler(elementClicked);
+    }
+  };
+
+  const btnHandler = (elementClicked) => {
     switch (elementClicked.id) {
       // ===== Player Select Buttons =================================
       case "two-players" :
