@@ -112,17 +112,18 @@ button:focus {
   outline: none;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 #page {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: #AD9EBC;
   color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ================================= HEADER ================================= */
@@ -155,6 +156,7 @@ header h1 {
 #info {
   font-size: 1.4em;
   margin: 15px 0;
+  grid-column: 1 / 4;
 }
 
 #info h3 {
@@ -188,7 +190,6 @@ header h1 {
   justify-content: space-around;
   padding: 20px 30px;
   border-radius: 5px;
-  /* background: #5E5666; */
   background: #850cff;
   box-shadow: 1px 1px 3px #0B0313;
 }
@@ -243,6 +244,12 @@ header h1 {
   /* margin-left: 60px; */
 }
 
+#name-input {
+  max-width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
 #name-input input {
   margin: 10px;
 }
@@ -256,9 +263,20 @@ header h1 {
 main {
   flex: 2;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   max-width: 100%;
+}
+
+main .container {
+  border: 2px solid red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  justify-content: center;
+}
+
+#player-select {
+  width: 96%;
+  margin: 0 auto;
 }
 
 #board {
@@ -465,94 +483,24 @@ footer a:hover {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
+   Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 600px) {
+  #player-select {
+    max-width: 60%;
+  }
+
+  .player-select-btn {
+    width: 20%;
+  }
 }
 
-@media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+@media only screen and (min-width: 768px) {
+  #name-input {
+    flex-direction: row;
+    align-items: center;
+  }
 }
